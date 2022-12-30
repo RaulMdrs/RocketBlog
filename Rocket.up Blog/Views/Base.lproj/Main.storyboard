@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Rocket_up_Blog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Rocket_up_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +72,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmo-u8-Olb" secondAttribute="trailing" constant="55" id="wYH-oL-daw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hpd-L5-6dg"/>
+                    <navigationItem key="navigationItem" id="hpd-L5-6dg">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Ytw-fr-TNP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="signInButton" destination="aiZ-YG-jdk" id="QjT-Iv-Orr"/>
                         <outlet property="signUpButton" destination="MVb-3I-NVM" id="oiA-MU-Who"/>
@@ -86,9 +89,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D0l-sl-x3J" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Cj-lo-23K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="backArrow" backIndicatorTransitionMaskImage="backArrow" id="0Cj-lo-23K">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Black"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -101,8 +105,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backArrow" width="16.666666030883789" height="16.666666030883789"/>
         <image name="backgroundLandindPage" width="414" height="896"/>
         <image name="rocketUpLogo" width="230" height="250"/>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

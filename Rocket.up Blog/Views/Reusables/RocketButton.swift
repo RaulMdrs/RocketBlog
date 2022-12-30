@@ -19,6 +19,10 @@ class RocketButton: UIButton {
             configSignInButton()
         }else if type == K.DefaultButton.signUpButton{
             configSignUpButton()
+        } else if type == K.DefaultButton.cancelButton {
+            configCancelButton()
+        } else if type == K.DefaultButton.tryAgainButton {
+            configTryAgainButton()
         }
     }
     
@@ -31,7 +35,36 @@ class RocketButton: UIButton {
         backgroundColor = UIColor(named: K.Colors.secondary)
         setTitle(K.Intl.signUpButtonTitle, for: .normal)
     }
+    
+    func configCancelButton() {
+        backgroundColor = UIColor(named: K.Colors.primary)
+        setTitle(K.Intl.cancelButton, for: .normal)
+        layer.cornerRadius = 12
+        titleLabel?.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.buttonFontSizeSmall)
 
+    }
+    
+    func configTryAgainButton() {
+        backgroundColor = UIColor(named: K.Colors.secondary)
+        setTitle(K.Intl.tryAgainButton, for: .normal)
+        layer.cornerRadius = 12
+        titleLabel?.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.buttonFontSizeSmall)
+    }
+    
+    func buttonEnable(type : String){
+        isEnabled = true
+        if type == K.DefaultButton.signUpButton{
+            configSignUpButton()
+        }
+        else{
+            configSignInButton()
+        }
+    }
+    
+    func buttonDisable(){
+        isEnabled = false
+        backgroundColor = UIColor(named: K.Colors.disabledButton)
+    }
 }
 
 
