@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoaderView" customModule="Rocket_up_Blog" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="hQv-pj-Pvd" id="cAP-g2-Mux"/>
+                <outlet property="parentView" destination="iN0-l3-epB" id="LdI-wH-ZIx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hQv-pj-Pvd">
+                    <rect key="frame" x="176.66666666666666" y="358.66666666666669" width="37" height="37"/>
+                    <color key="color" name="Primary"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hQv-pj-Pvd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EZV-nH-dyR"/>
+                <constraint firstItem="hQv-pj-Pvd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-45" id="MCK-k1-5Yj"/>
+            </constraints>
+            <point key="canvasLocation" x="-69" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Primary">
+            <color red="0.79600000381469727" green="0.17299999296665192" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

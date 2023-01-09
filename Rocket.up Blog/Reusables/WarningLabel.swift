@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WarningLabelController: UILabel {
+class WarningLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,19 +19,19 @@ class WarningLabelController: UILabel {
         setupLayout()
     }
     
-    func setupLayout(){
+    func setupLayout() {
         self.isHidden = true
         self.text = ""
         self.font = UIFont(name: K.Fonts.montserratRegular, size: 12)
         textColor = UIColor(named: K.Colors.warning)
     }
     
-    func setupWarning(message : String){
+    func setupWarning(message : String) {
         isHidden = false
         text = message
     }
     
-    func resetWarning(){
+    func resetWarning() {
         isHidden = true
         text = ""
     }

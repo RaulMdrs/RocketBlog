@@ -1,16 +1,11 @@
 //
-//  Error.swift
+//  ErrorResponse.swift
 //  Rocket.up Blog
 //
-//  Created by Raul de Medeiros on 27/12/22.
+//  Created by Raul de Medeiros on 04/01/23.
 //
 
 import Foundation
-
-struct Response: Codable {
-    let status: String
-    let errors: [ErrorResponse]?
-}
 
 struct ErrorResponse : Codable {
     let value : String
@@ -18,4 +13,3 @@ struct ErrorResponse : Codable {
     let param : String
     let location : String
 }
-

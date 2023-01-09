@@ -9,41 +9,26 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet var parentView: UIView!
     @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var signUpButton: RocketButton!
-    @IBOutlet weak var nameTextField: RocketTextFieldController!
-    @IBOutlet weak var emailTextField: RocketTextFieldController!
-    @IBOutlet weak var passwordTextField: RocketTextFieldController!
-    @IBOutlet weak var confirmPasswordTextField: RocketTextFieldController!
+    @IBOutlet weak var nameTextField: RocketTextField!
+    @IBOutlet weak var emailTextField: RocketTextField!
+    @IBOutlet weak var passwordTextField: RocketTextField!
+    @IBOutlet weak var confirmPasswordTextField: RocketTextField!
     
-    @IBOutlet weak var activityIndicatorView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var loader = LoaderView()
     
-    @IBOutlet weak var errorModal: RocketWarningModalController!
-    
-    var newUser = User(name: "", email: "", password: "", confirmPassword: "")
-    var postRequest = ParseJSON()
+    var newUser = UserRegister(name: "", email: "", password: "", confirmPassword: "")
+    var postRequest = ApiManager()
     var readyToRegister = ReadyToRegister()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        postRequest.delegate = self
+        postRequest.registerDelegate = self
         setupLayout()
-    }
-    func setupLayout() {
-        setTextFieldDelegate()
-        setupLabel()
-        setupButton()
-        setupTextField()
-    }
-    
-    func setupButton() {
-        signUpButton.configButton(type: K.DefaultButton.signUpButton)
-        signUpButton.buttonEnable(type: K.DefaultButton.signUpButton)
-    }
-    func setupLabel() {
-        signUpLabel.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.h3Headline)
+        setupGesture()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,21 +36,44 @@ class SignUpViewController: UIViewController {
         setupTextField()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        refreshNavigation()
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    private func setupGesture() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func setupLayout() {
+        setTextFieldDelegate()
+        setupLabel()
+        setupButton()
+        setupTextField()
+        loaderSetup()
+    }
+    
+    func setupButton() {
+        signUpButton.setupButton(type: .secondary, title: K.Intl.signUpButtonTitle)
+        signUpButton.buttonEnable()
+    }
+    func setupLabel() {
+        signUpLabel.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.h3Headline)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkTextFieldsValue()
     }
     
-    private func showLoader() {
-        activityIndicatorView.isHidden = false
-        activityIndicator.startAnimating()
-    }
-    
-    private func hideLoader() {
-        DispatchQueue.main.async {
-            self.activityIndicatorView.isHidden = true
-            self.activityIndicator.stopAnimating()
-        }
+    private func loaderSetup() {
+        loader = LoaderView(frame: self.parentView.frame)
+        loader.hideLoader()
+        self.parentView.addSubview(loader)
     }
     
     @IBAction private func submitSignUpPressed(_ sender: Any) {
@@ -85,87 +93,76 @@ class SignUpViewController: UIViewController {
     }
     
     private func checkTextFieldsValue() {
+        guard let emailLength = emailTextField.textField.text?.count,
+              let nameLenght = nameTextField.textField.text?.count,
+              let passwordLenght = passwordTextField.textField.text?.count,
+              let confirmPasswordLenght = confirmPasswordTextField.textField.text?.count else {
+                                                                    signUpButton.buttonDisable()
+                                                                    return }
         if ParametersVerifier.verifyLetterCount(texts: [
-            nameTextField.textField.text?.count ?? 0,
-            emailTextField.textField.text?.count ?? 0,
-            passwordTextField.textField.text?.count ?? 0,
-            confirmPasswordTextField.textField.text?.count ?? 0
-        ]){
-            signUpButton.buttonEnable(type: K.DefaultButton.signUpButton)
-        }else{
+            nameLenght,
+            emailLength,
+            passwordLenght,
+            confirmPasswordLenght
+        ]) {
+            signUpButton.buttonEnable()
+        } else {
             signUpButton.buttonDisable()
         }
     }
     
     func setupTextField() {
-        nameTextField.customTextField(type: K.TypeTextField.name)
-        emailTextField.customTextField(type: K.TypeTextField.email)
-        passwordTextField.customTextField(type: K.TypeTextField.password)
-        confirmPasswordTextField.customTextField(type: K.TypeTextField.confirmPassword)
+        nameTextField.customTextField(type: .name)
+        emailTextField.customTextField(type: .email)
+        passwordTextField.customTextField(type: .password)
+        confirmPasswordTextField.customTextField(type: .confirmPassword)
     }
     
     private func checkNameParameter() {
-        if ParametersVerifier.verifyNameTextField(nameTextField.textField.text ?? "") {
-            newUser.name = nameTextField.textField.text ?? ""
+        guard let nameText = nameTextField.textField.text else {return}
+        if ParametersVerifier.verifyNameTextField(nameText) {
+            newUser.name = nameText
             readyToRegister.nameIsSet = true
-            if nameTextField.isWarning {
-                nameTextField.configWarning()
-            }
+            nameTextField.resetError()
         } else {
-            readyToRegister.nameIsSet = false
-            if !nameTextField.isWarning {
-                nameTextField.configWarning()
-            }
-            nameTextField.errorLabel.setupWarning(message: K.ErrorLabel.name)
+            readyToRegister.emailIsSet = false
+            nameTextField.setError(message: K.Intl.errorName)
         }
     }
     
     private func checkEmailParameter() {
-        if ParametersVerifier.verifyEmailTextField(emailTextField.textField.text ?? "") {
-            newUser.email = emailTextField.textField.text ?? ""
+        guard let emailText = emailTextField.textField.text else {return}
+        if ParametersVerifier.verifyEmailTextField(emailText) {
+            newUser.email = emailText
             readyToRegister.emailIsSet = true
-            if emailTextField.isWarning {
-                emailTextField.configWarning()
-            }
+            emailTextField.resetError()
         } else {
             readyToRegister.emailIsSet = false
-            if !emailTextField.isWarning {
-                emailTextField.configWarning()
-                emailTextField.errorLabel.setupWarning(message: K.ErrorLabel.email)
+            emailTextField.setError(message: K.Intl.errorEmail)
             }
         }
-    }
     
     private func checkPasswordParameter() {
-        if ParametersVerifier.verifyPasswordTextField(passwordTextField.textField.text ?? ""){
-            newUser.password = passwordTextField.textField.text!
+        guard let passwordText = passwordTextField.textField.text else {return}
+        if ParametersVerifier.verifyPasswordTextField(passwordText){
+            newUser.password = passwordText
             readyToRegister.passwordIsSet = true
-            if passwordTextField.isWarning {
-                passwordTextField.configWarning()
-            }
+            passwordTextField.resetError()
         } else {
             readyToRegister.passwordIsSet = false
-            if !passwordTextField.isWarning {
-                passwordTextField.configWarning()
-                passwordTextField.errorLabel.setupWarning(message: K.ErrorLabel.password)
-            }
+            passwordTextField.setError(message: K.Intl.errorPassword)
         }
     }
     
     private func checkConfirmPassword() {
-        if ParametersVerifier.verifyPasswordConfirmation(passwordReceived: confirmPasswordTextField.textField.text ?? "", newUserPassword: newUser.password){
-            guard let confirmPassword = confirmPasswordTextField.textField.text else {return}
-            newUser.confirmPassword = confirmPassword
+        guard let passwordConfirmText = confirmPasswordTextField.textField.text else {return}
+        if ParametersVerifier.verifyPasswordConfirmation(passwordReceived: passwordConfirmText, newUserPassword: newUser.password) {
+            newUser.confirmPassword = passwordConfirmText
             readyToRegister.confirmPasswordIsSet = true
-            if confirmPasswordTextField.isWarning{
-                confirmPasswordTextField.configWarning()
-            }
-        }else{
+            confirmPasswordTextField.resetError()
+        } else {
             readyToRegister.confirmPasswordIsSet = false
-            if !confirmPasswordTextField.isWarning{
-                confirmPasswordTextField.configWarning()
-                confirmPasswordTextField.errorLabel.setupWarning(message: K.ErrorLabel.confirmPassword)
-            }
+            confirmPasswordTextField.setError(message: K.Intl.errorConfirmPassword)
         }
     }
     
@@ -178,31 +175,48 @@ class SignUpViewController: UIViewController {
     
     private func finalVerificationBeforeSendingToAPI() {
         if readyToRegister.readyToRegister() {
-            showLoader()
-            postRequest.makePostRequest(newUser)
-            
+            loader.showLoader()
+            postRequest.makePostRegisterRequest(newUser)
         } 
+    }
+    
+    private func refreshNavigation() {
+        navigationItem.hidesBackButton = true
+        self.dismiss(animated: false)
+        self.removeFromParent()
     }
 }
 
 extension SignUpViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        checkTextFieldsValue()
         textField.endEditing(true)
-        return true
+        return false
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkTextFieldsValue()
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        checkTextFieldsValue()
+    }
+
 }
 
-extension SignUpViewController : PostDelegateProtocol {
-    func success(_ response: Response) {
-        hideLoader()
+extension SignUpViewController : PostResgisterDelegateProtocol {
+    func success(_ response: RegisterResponse) {
+        loader.hideLoader()
         self.navigationController?.popToRootViewController(animated: false)
     }
     
     func failed(_ message: String) {
-        self.hideLoader()
-        self.errorModal.setError(str: message)
+        loader.hideLoader()
+        let errorModalTest = RocketWarningModal(frame: self.parentView.frame)
+        errorModalTest.setError(str: message)
+        self.parentView.addSubview(errorModalTest)
+        
     }
 }
+
 

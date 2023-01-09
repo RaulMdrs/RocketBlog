@@ -7,9 +7,9 @@
 
 import UIKit
 
-class RocketWarningModalController: UIView {
+class RocketWarningModal: UIView {
     
-    @IBOutlet weak var errorLabel: ErrorLabelModal!
+    @IBOutlet weak var errorLabel: ErrorModalLabel!
 
     @IBOutlet weak var errorView: UIView!
     @IBOutlet var parentView: UIView!
@@ -29,7 +29,9 @@ class RocketWarningModalController: UIView {
     }
     
     func loadViewCustom() {
-        Bundle.main.loadNibNamed(K.nibName.RocketWarningModal, owner: self)
+        Bundle.main.loadNibNamed(K.nibName.rocketWarningModal, owner: self)
+        parentView.frame = bounds
+        parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(parentView)
         configLayout()
     }
@@ -37,18 +39,27 @@ class RocketWarningModalController: UIView {
     func configLayout() {
         isHidden = true
         tryAgainButton.isHidden = true
-        errorView.layer.cornerRadius = 12
-        errorView.layer.masksToBounds = true
-        cancelButton.configButton(type: K.DefaultButton.cancelButton)
+        setupErrorView()
+        setupButton()
     }
     
-    func setError(str: String = K.ErrorLabel.defaultErrorMessage) {
+    func setupErrorView() {
+        errorView.layer.cornerRadius = 12
+        errorView.layer.masksToBounds = true
+    }
+    
+    func setupButton() {
+        cancelButton.setupButton(type: .primary, title: K.Intl.understoodButton)
+        cancelButton.layer.cornerRadius = K.DefaultButton.buttonErrorModalCornerRadius
+    }
+    
+    func setError(str: String = K.Intl.errorDefaultErrorMessage) {
         isHidden = false
         errorLabel.setupError(message: str)
     }
     
-    func resetError(){
-        isHidden = true
+    func resetError() {
+        self.removeFromSuperview()
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {

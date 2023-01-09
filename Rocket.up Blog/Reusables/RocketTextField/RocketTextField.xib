@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RocketTextFieldController" customModule="Rocket_up_Blog" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RocketTextField" customModule="Rocket_up_Blog" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="i5M-Pr-FkT" id="dzh-Hw-IsU"/>
                 <outlet property="errorLabel" destination="Ud9-kv-yKl" id="uPx-kf-xv8"/>
@@ -51,7 +51,7 @@
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wS6-VK-Jjw">
-                                    <rect key="frame" x="51" y="4" width="265" height="44"/>
+                                    <rect key="frame" x="55" y="4" width="261" height="44"/>
                                     <accessibility key="accessibilityConfiguration">
                                         <accessibilityTraits key="traits" image="YES"/>
                                     </accessibility>
@@ -65,7 +65,7 @@
                                 <constraint firstAttribute="trailing" secondItem="wS6-VK-Jjw" secondAttribute="trailing" constant="4" id="NUM-sG-zjT"/>
                                 <constraint firstItem="wS6-VK-Jjw" firstAttribute="top" secondItem="oaY-cj-b87" secondAttribute="top" constant="4" id="PKA-lJ-eJ6"/>
                                 <constraint firstItem="xjK-jM-gvD" firstAttribute="top" secondItem="oaY-cj-b87" secondAttribute="top" constant="5" id="RFJ-1R-jMu"/>
-                                <constraint firstItem="wS6-VK-Jjw" firstAttribute="leading" secondItem="xjK-jM-gvD" secondAttribute="trailing" constant="4" id="Thu-xT-Ysm"/>
+                                <constraint firstItem="wS6-VK-Jjw" firstAttribute="leading" secondItem="xjK-jM-gvD" secondAttribute="trailing" constant="8" id="Thu-xT-Ysm"/>
                                 <constraint firstItem="xjK-jM-gvD" firstAttribute="leading" secondItem="oaY-cj-b87" secondAttribute="leading" constant="5" id="Uiz-xz-dfa"/>
                                 <constraint firstAttribute="bottom" secondItem="xjK-jM-gvD" secondAttribute="bottom" constant="5" id="YY8-fV-NeH"/>
                                 <constraint firstAttribute="bottom" secondItem="wS6-VK-Jjw" secondAttribute="bottom" constant="4" id="scF-Bs-y9y"/>
@@ -74,7 +74,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iJ-UZ-vZW">
                             <rect key="frame" x="0.0" y="56" width="320" height="22"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud9-kv-yKl" customClass="WarningLabelController" customModule="Rocket_up_Blog" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud9-kv-yKl" customClass="WarningLabel" customModule="Rocket_up_Blog" customModuleProvider="target">
                                     <rect key="frame" x="8" y="0.0" width="312" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="HzM-rR-cES"/>

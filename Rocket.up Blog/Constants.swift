@@ -8,30 +8,30 @@
 import Foundation
 
 class K {
-    
-    struct TypeTextField{
+    struct TypeTextField {
         static let name : String = "name"
         static let email : String = "email"
         static let password : String = "password"
         static let confirmPassword : String = "confirmPassword"
     }
     
-    struct DefaultButton{
-        
+    struct DefaultButton {
         static let buttonCornerRadius: CGFloat = 26
-        static let signInButton : String = "SignIn"
-        static let signUpButton : String = "SignUp"
-        static let cancelButton : String = "Cancel"
-        static let tryAgainButton : String = "TryAgain"
         static let buttonFontSize : CGFloat = 14.0
+        static let buttonErrorModalCornerRadius : CGFloat = 12
+        struct ButtonColors {
+            static let primary : String = "Primary"
+            static let secondary : String = "Secondary"
+            static let danger : String = "Danger"
+            static let disabledButton : String = "DisabledButton"
+        }
     }
     
-    struct Fonts{
+    struct Fonts {
         static let montserratBold : String = "Montserrat-Bold"
         static let montserratMedium : String = "Montserrat-Medium"
         static let montserratRegular : String = "Montserrat-Regular"
-        
-        struct Size{
+        struct Size {
             static let warningSize : CGFloat = 12.0
             
             static let buttonFontSizeGiant : CGFloat = 18
@@ -53,7 +53,7 @@ class K {
     
     struct Colors{
         
-        static let warning : String = "Warning"
+        static let warning : String = "Danger"
         static let success : String = "Success"
         static let attention : String = "Attention"
         
@@ -68,50 +68,48 @@ class K {
         static let secondary : String = "Secondary"
         static let blue : String = "Blue"
         static let turquoise : String = "Turquoise"
-        
     }
     
     struct StoryboardNames{
         static let landingPage = "Main"
         static let signIn = "SignInView"
         static let signUp = "SignUpView"
+        static let home = "HomeView"
     }
     
     struct nibName {
-        static let RocketWarningModal : String = "RocketWarningModal"
-        static let RocketTextField: String = "RocketTextField"
+        static let rocketWarningModal : String = "RocketWarningModal"
+        static let rocketTextField: String = "RocketTextField"
+        static let loader : String = "Loader"
     }
     
     struct Intl {
         static let signInButtonTitle : String = "Login"
         static let signUpButtonTitle : String = "Inscrever-se"
-        static let cancelButton: String = "Cancelar"
+        static let understoodButton: String = "Entendi"
         static let tryAgainButton : String = "Tentar Novamente"
-        
-        
         static let fullNamePlaceholder : String = "Nome completo"
         static let emailPlaceholder : String = "E-mail"
         static let passwordPlaceholder : String = "Senha"
         static let confirmPasswordPlaceholder : String = "Confirmação de senha"
+        static let errorName : String = "Informe seu nome completo"
+        static let errorEmail : String = "Formato de email inválido"
+        static let errorEmailLoginScreen : String = "O e-mail informado não é válido."
+        static let errorPassword : String = "Deve conter ao menos 1 letra, 1 número, 1 caractere especial e ter 6 ou mais caracteres"
+        static let errorConfirmPassword : String = "A confirmação de senha deve ser idêntica à senha."
+        static let errorDefaultErrorMessage : String = "Ops!\nAlgo inesperado aconteceu."
     }
     
-    struct ImageTextField{
+    struct ImageTextField {
         static let social : String = "social"
         static let mail : String = "mail"
         static let locker : String = "locker"
-    }
-    
-    struct ErrorLabel{
-        static let name : String = "Informe seu nome completo"
-        static let email : String = "Formato de email inválido"
-        static let password : String = "Deve conter ao menos 1 letra, 1 número, 1 caractere especial e ter 6 ou mais caracteres"
-        static let confirmPassword : String = "A confirmação de senha deve ser idêntica à senha."
-        static let emailAlreadyRegistered : String = "Este e-mail já está em uso."
-        static let defaultErrorMessage : String = "Ops!\nAlgo inesperado aconteceu."
+        static let backArrow : String = "backArrow"
     }
     
     struct ResponseAPI {
         static let success : String = "success"
         static let failed : String = "failed"
+        static let accessToken : String = "accessToken"
     }
 }

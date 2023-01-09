@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ErrorLabelModal : UILabel{
+class ErrorModalLabel : UILabel{
     
     override init(frame: CGRect) {
         super.init(frame: frame)

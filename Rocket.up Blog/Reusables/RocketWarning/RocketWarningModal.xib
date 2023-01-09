@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RocketWarningModalController" customModule="Rocket_up_Blog" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RocketWarningModal" customModule="Rocket_up_Blog" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="uSJ-QC-ipC" id="cYE-zP-0wM"/>
                 <outlet property="errorLabel" destination="iIZ-1T-fev" id="5Ew-9w-0Tv"/>
@@ -21,7 +21,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="R7C-Gr-QRa">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhF-iI-r9I" userLabel="ErrorView">
                     <rect key="frame" x="20" y="167" width="350" height="218"/>
@@ -51,8 +51,8 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-1T-fev" customClass="ErrorLabelModal" customModule="Rocket_up_Blog" customModuleProvider="target">
-                            <rect key="frame" x="154.33333333333334" y="99" width="41.333333333333343" height="20.333333333333329"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-1T-fev" customClass="ErrorModalLabel" customModule="Rocket_up_Blog" customModuleProvider="target">
+                            <rect key="frame" x="25" y="99" width="300" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -60,9 +60,11 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstItem="iIZ-1T-fev" firstAttribute="leading" secondItem="fhF-iI-r9I" secondAttribute="leading" constant="25" id="1NL-w4-QYg"/>
                         <constraint firstItem="ptb-Q9-nUs" firstAttribute="top" secondItem="fhF-iI-r9I" secondAttribute="top" constant="27" id="CoT-Ow-OWh"/>
                         <constraint firstItem="hfr-PV-tHY" firstAttribute="top" secondItem="iIZ-1T-fev" secondAttribute="bottom" constant="37" id="Dpf-pW-LmO"/>
                         <constraint firstItem="iIZ-1T-fev" firstAttribute="top" secondItem="ptb-Q9-nUs" secondAttribute="bottom" constant="12" id="MOC-ZQ-ocb"/>
+                        <constraint firstAttribute="trailing" secondItem="iIZ-1T-fev" secondAttribute="trailing" constant="25" id="S1A-vz-SC0"/>
                         <constraint firstItem="hfr-PV-tHY" firstAttribute="leading" secondItem="fhF-iI-r9I" secondAttribute="leading" constant="20" id="U0W-k9-RpV"/>
                         <constraint firstItem="iIZ-1T-fev" firstAttribute="centerX" secondItem="fhF-iI-r9I" secondAttribute="centerX" id="Xqe-a7-FPQ"/>
                         <constraint firstAttribute="trailing" secondItem="hfr-PV-tHY" secondAttribute="trailing" constant="20" id="Z7L-fL-2iT"/>

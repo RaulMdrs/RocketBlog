@@ -8,7 +8,6 @@
 import Foundation
 
 class ParametersVerifier {
-    
     var password: String?
     
     static func verifyNameTextField(_ name: String) -> Bool {
@@ -21,8 +20,8 @@ class ParametersVerifier {
             }
         }
         
-        for position in incomeName{
-            if position.isEmpty || position == " "{
+        for position in incomeName {
+            if position.isEmpty || position == " " {
                 return false
             }
         }
@@ -55,11 +54,19 @@ class ParametersVerifier {
         }
     }
     
-    static func verifyLetterCount(texts : [Int]) -> Bool{
-        for counter in texts{
+    static func verifyLetterCount(texts : [Int]) -> Bool {
+        for counter in texts {
             if !(counter >= 1){
                 return false
             }
+        }
+        return true
+    }
+    
+    static func verifyLetterCountLoginPassword(text: String) -> Bool {
+        
+        if !(text.count >= 6) {
+                return false
         }
         return true
     }

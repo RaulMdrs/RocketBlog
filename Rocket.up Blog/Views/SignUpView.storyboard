@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Sign Up View Controller-->
+        <!-- -->
         <scene sceneID="0jH-TW-Shf">
             <objects>
                 <viewController storyboardIdentifier="SignUpView" id="rNs-nx-hH7" customClass="SignUpViewController" customModule="Rocket_up_Blog" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,28 +54,28 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="jPc-CX-N3b">
                                                 <rect key="frame" x="55" y="280" width="280" height="241"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDP-BF-xEz" customClass="RocketTextFieldController" customModule="Rocket_up_Blog" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDP-BF-xEz" customClass="RocketTextField" customModule="Rocket_up_Blog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="R9j-Ni-X7Z"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzJ-ES-aIu" customClass="RocketTextFieldController" customModule="Rocket_up_Blog" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzJ-ES-aIu" customClass="RocketTextField" customModule="Rocket_up_Blog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="63" width="280" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="ylb-x4-sxA"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxx-GL-A1E" customClass="RocketTextFieldController" customModule="Rocket_up_Blog" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxx-GL-A1E" customClass="RocketTextField" customModule="Rocket_up_Blog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="126" width="280" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="RoK-lh-mkU"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV6-gF-UoO" customClass="RocketTextFieldController" customModule="Rocket_up_Blog" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV6-gF-UoO" customClass="RocketTextField" customModule="Rocket_up_Blog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="189" width="280" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -126,38 +126,19 @@
                                                     <constraint firstAttribute="height" constant="44" id="Mj7-oB-ube"/>
                                                 </constraints>
                                             </stackView>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-CZ-KR1">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="950"/>
-                                                <subviews>
-                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DQg-V8-cW3">
-                                                        <rect key="frame" x="176.66666666666666" y="426.66666666666669" width="37" height="37"/>
-                                                        <color key="color" name="Primary"/>
-                                                    </activityIndicatorView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="DQg-V8-cW3" firstAttribute="centerX" secondItem="b5q-CZ-KR1" secondAttribute="centerX" id="sIo-iX-JTj"/>
-                                                    <constraint firstItem="DQg-V8-cW3" firstAttribute="centerY" secondItem="b5q-CZ-KR1" secondAttribute="centerY" constant="-30" id="vDS-0M-BmH"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="jPc-CX-N3b" firstAttribute="leading" secondItem="KOH-KF-wTO" secondAttribute="leading" constant="55" id="0Rr-5P-BYN"/>
-                                            <constraint firstItem="b5q-CZ-KR1" firstAttribute="leading" secondItem="KOH-KF-wTO" secondAttribute="leading" id="5XR-7S-vl5"/>
                                             <constraint firstItem="jPc-CX-N3b" firstAttribute="top" secondItem="ipL-vm-oNn" secondAttribute="bottom" constant="40" id="AQi-Dx-d9X"/>
                                             <constraint firstItem="ipL-vm-oNn" firstAttribute="top" secondItem="KOH-KF-wTO" secondAttribute="top" constant="20" id="CHw-qL-vn0"/>
                                             <constraint firstItem="NN3-Dh-5UR" firstAttribute="top" secondItem="mVm-25-jQw" secondAttribute="bottom" constant="51" id="Dka-KY-y6e"/>
                                             <constraint firstItem="mVm-25-jQw" firstAttribute="centerX" secondItem="KOH-KF-wTO" secondAttribute="centerX" id="NKi-Ip-EeE"/>
                                             <constraint firstAttribute="trailing" secondItem="mVm-25-jQw" secondAttribute="trailing" constant="55" id="PRW-OL-V9e"/>
                                             <constraint firstItem="ipL-vm-oNn" firstAttribute="centerX" secondItem="KOH-KF-wTO" secondAttribute="centerX" id="Vyy-sA-NIk"/>
-                                            <constraint firstItem="b5q-CZ-KR1" firstAttribute="top" secondItem="KOH-KF-wTO" secondAttribute="top" id="WV5-CF-iEi"/>
                                             <constraint firstAttribute="trailing" secondItem="jPc-CX-N3b" secondAttribute="trailing" constant="55" id="XOo-Ma-5sC"/>
                                             <constraint firstItem="mVm-25-jQw" firstAttribute="leading" secondItem="KOH-KF-wTO" secondAttribute="leading" constant="55" id="awc-fq-XbZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="b5q-CZ-KR1" secondAttribute="trailing" id="dwe-of-pIx"/>
                                             <constraint firstItem="NN3-Dh-5UR" firstAttribute="centerX" secondItem="KOH-KF-wTO" secondAttribute="centerX" id="kmc-Wb-MCH"/>
-                                            <constraint firstAttribute="height" constant="950" id="lRr-9l-YUE"/>
-                                            <constraint firstAttribute="bottom" secondItem="b5q-CZ-KR1" secondAttribute="bottom" id="xlS-wg-6Gq"/>
                                             <constraint firstItem="mVm-25-jQw" firstAttribute="top" secondItem="jPc-CX-N3b" secondAttribute="bottom" constant="20" id="zQG-r5-9mZ"/>
                                         </constraints>
                                     </view>
@@ -169,32 +150,26 @@
                                     <constraint firstAttribute="bottom" secondItem="KOH-KF-wTO" secondAttribute="bottom" id="Z6X-0T-adW"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXR-rS-RY8" customClass="RocketWarningModalController" customModule="Rocket_up_Blog" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5k0-9D-elR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6DU-X3-JeF" secondAttribute="bottom" id="3LO-xA-lvI"/>
-                            <constraint firstItem="CXR-rS-RY8" firstAttribute="top" secondItem="RzI-8d-y93" secondAttribute="topMargin" id="HOT-3Z-toU"/>
-                            <constraint firstItem="CXR-rS-RY8" firstAttribute="leading" secondItem="5k0-9D-elR" secondAttribute="leading" id="P9d-e7-yDN"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="CXR-rS-RY8" secondAttribute="bottom" id="YyT-6t-10U"/>
                             <constraint firstItem="KOH-KF-wTO" firstAttribute="width" secondItem="RzI-8d-y93" secondAttribute="width" id="bK1-WT-Dm9"/>
                             <constraint firstItem="6DU-X3-JeF" firstAttribute="top" secondItem="RzI-8d-y93" secondAttribute="top" id="ig6-Ir-vej"/>
+                            <constraint firstItem="KOH-KF-wTO" firstAttribute="height" secondItem="RzI-8d-y93" secondAttribute="height" multiplier="1.12559" id="k6S-1Q-7w5"/>
                             <constraint firstItem="6DU-X3-JeF" firstAttribute="leading" secondItem="5k0-9D-elR" secondAttribute="leading" id="mFN-pX-IUY"/>
                             <constraint firstItem="6DU-X3-JeF" firstAttribute="trailing" secondItem="5k0-9D-elR" secondAttribute="trailing" id="pDd-nG-T8K"/>
-                            <constraint firstItem="5k0-9D-elR" firstAttribute="trailing" secondItem="CXR-rS-RY8" secondAttribute="trailing" id="xeX-sw-0gB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title=" " id="A2m-bc-7wa">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Whc-mw-8AM"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="DQg-V8-cW3" id="OaX-Xd-vDo"/>
-                        <outlet property="activityIndicatorView" destination="b5q-CZ-KR1" id="pgv-hu-fgD"/>
                         <outlet property="confirmPasswordTextField" destination="XV6-gF-UoO" id="BNp-1c-rM3"/>
                         <outlet property="emailTextField" destination="XzJ-ES-aIu" id="ZE2-is-vSG"/>
-                        <outlet property="errorModal" destination="CXR-rS-RY8" id="uzw-Or-Ofy"/>
                         <outlet property="nameTextField" destination="KDP-BF-xEz" id="ibX-Bp-zPU"/>
+                        <outlet property="parentView" destination="RzI-8d-y93" id="bbJ-Ks-hfy"/>
                         <outlet property="passwordTextField" destination="Cxx-GL-A1E" id="a4W-8n-U9H"/>
                         <outlet property="signUpButton" destination="mVm-25-jQw" id="fSa-6e-p8f"/>
                         <outlet property="signUpLabel" destination="lsu-F5-9C7" id="arr-bt-6dO"/>
