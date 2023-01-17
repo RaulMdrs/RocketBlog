@@ -9,7 +9,7 @@ import UIKit
 
 class RocketButton: UIButton {
     var type : ButtonTypeEnum = .primary
-
+    
     func setupButton(type : ButtonTypeEnum, title : String) {
         self.type = type
         layer.cornerRadius = K.DefaultButton.buttonCornerRadius
@@ -31,7 +31,6 @@ class RocketButton: UIButton {
         backgroundColor = UIColor(named: ButtonTypeEnum.disabled.rawValue)
     }
 }
-
 
 enum ButtonTypeEnum : String {
     case primary = "Primary"

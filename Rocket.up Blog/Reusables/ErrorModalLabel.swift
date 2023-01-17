@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ErrorModalLabel : UILabel{
+class ErrorModalLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ class ErrorModalLabel : UILabel{
         textColor = UIColor(named: K.Colors.black)
     }
     
-    func setupError(message : String) {
+    func setupError(message: String) {
         text = message
     }
 }

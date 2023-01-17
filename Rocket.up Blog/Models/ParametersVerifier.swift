@@ -39,7 +39,6 @@ class ParametersVerifier {
         return emailPred.evaluate(with: email)
     }
     
-    
     static func verifyPasswordTextField(_ myPassword: String) -> Bool {
         let passwordRegx = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{6,}$"
         let passwordCheck = NSPredicate(format: "SELF MATCHES %@",passwordRegx)
@@ -64,8 +63,7 @@ class ParametersVerifier {
     }
     
     static func verifyLetterCountLoginPassword(text: String) -> Bool {
-        
-        if !(text.count >= 6) {
+        if !(text.count >= K.ParametersVerifier.minCharacter) {
                 return false
         }
         return true

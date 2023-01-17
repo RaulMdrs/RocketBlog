@@ -10,7 +10,7 @@ import Foundation
 struct ReadyToLogin {
     private var emailIsSet : Bool = false
     private var passwordIsSet : Bool = false
-
+    
     mutating func setEmail(state: Bool) {
         emailIsSet = state
     }
@@ -18,7 +18,7 @@ struct ReadyToLogin {
     mutating func setPassword(state: Bool) {
         passwordIsSet = state
     }
-     
+    
     func readyToLogin() -> Bool {
         if emailIsSet && passwordIsSet {
             return true

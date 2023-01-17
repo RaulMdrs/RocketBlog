@@ -9,11 +9,11 @@ import Foundation
 
 
 protocol GetDelegateProtocol {
-    func success()
-    func failed()
+    func success(_ response: UserResponse)
+    func failed(_ message: String)
 }
 
-protocol PostResgisterDelegateProtocol {
+protocol PostRegisterDelegateProtocol {
     func success(_ response: RegisterResponse)
     func failed(_ message : String)
 }
@@ -29,8 +29,10 @@ struct ApiManager {
     let login = "/auth/login"
     let apiHealthStatus = "/health"
     let register = "/register"
-    var registerDelegate : PostResgisterDelegateProtocol?
-    var loginDelegate : PostLoginDelegateProtocol?
+    let getMe = "/users/me"
+    var registerDelegate: PostRegisterDelegateProtocol?
+    var loginDelegate: PostLoginDelegateProtocol?
+    var userDelegate: GetDelegateProtocol?
     
     func makePostRegisterRequest(_ user: UserRegister) {
         guard let url = URL(string: apiURL + register) else {
@@ -39,11 +41,11 @@ struct ApiManager {
         }
         
         var request = URLRequest(url: url)
-
+        
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         let body : [String : String] = [
             "name": user.name,
             "email": user.email,
@@ -51,12 +53,12 @@ struct ApiManager {
             "confirmPassword": user.confirmPassword
         ]
         
-       guard let httpBody = try? JSONSerialization.data(withJSONObject: body, options: []) else {
-           DispatchQueue.main.async {
-               self.registerDelegate?.failed(K.Intl.errorDefaultErrorMessage)
-           }
-           return
-       }
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: body, options: []) else {
+            DispatchQueue.main.async {
+                self.registerDelegate?.failed(K.Intl.errorDefaultErrorMessage)
+            }
+            return
+        }
         request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -90,7 +92,7 @@ struct ApiManager {
         }
         
         var request = URLRequest(url: url)
-
+        
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -100,12 +102,12 @@ struct ApiManager {
             "password": user.password
         ]
         
-       guard let httpBody = try? JSONSerialization.data(withJSONObject: body, options: []) else {
-           DispatchQueue.main.async {
-               self.loginDelegate?.failed(K.Intl.errorDefaultErrorMessage)
-           }
-           return
-       }
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: body, options: []) else {
+            DispatchQueue.main.async {
+                self.loginDelegate?.failed(K.Intl.errorDefaultErrorMessage)
+            }
+            return
+        }
         request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -130,6 +132,43 @@ struct ApiManager {
                 }
                 catch {
                     self.loginDelegate?.failed(K.Intl.errorDefaultErrorMessage)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func makeGetMeRequest() {
+        guard let url = URL(string: apiURL + getMe) else {
+            self.userDelegate?.failed(K.Intl.errorDefaultErrorMessage)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "accept")
+        request.addValue(Authentication.shared.getToken(), forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                DispatchQueue.main.async {
+                    self.userDelegate?.failed(K.Intl.errorDefaultErrorMessage)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                do {
+                    let response = try JSONDecoder().decode(UserResponse.self, from: data)
+                    if response.status == K.ResponseAPI.success {
+                        self.userDelegate?.success(response)
+                    } else {
+                        guard let errorResponseMsg = response.errors?.first?.msg else {return}
+                        self.userDelegate?.failed(errorResponseMsg)
+                    }
+                }
+                catch {
+                    self.userDelegate?.failed(K.Intl.errorDefaultErrorMessage)
                 }
             }
         }

@@ -11,5 +11,9 @@ class Authentication {
     var accessToken : String = ""
     
     static let shared = Authentication()
+    
+    func getToken() -> String {
+        return "Bearer \(accessToken)"
+    }
 }
 

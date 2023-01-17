@@ -24,7 +24,7 @@ class LoaderView: UIView {
     }
     
     func loadViewCustom() {
-        Bundle.main.loadNibNamed(K.nibName.loader, owner: self)
+        Bundle.main.loadNibNamed(K.NibName.loader, owner: self)
         addSubview(parentView)
         parentView.frame = self.bounds
         parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

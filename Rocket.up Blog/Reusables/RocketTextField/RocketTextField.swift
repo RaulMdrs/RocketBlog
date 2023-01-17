@@ -8,7 +8,6 @@
 import UIKit
 
 class RocketTextField: UIView {
-
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var labelView: UIView!
     @IBOutlet var contentView: UIView!
@@ -33,7 +32,7 @@ class RocketTextField: UIView {
     }
     
     func loadViewCustom() {
-        Bundle.main.loadNibNamed(K.nibName.rocketTextField, owner: self)
+        Bundle.main.loadNibNamed(K.NibName.rocketTextField, owner: self)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
@@ -54,21 +53,6 @@ class RocketTextField: UIView {
         labelView.isHidden = true
         errorLabel.resetWarning()
     }
-    
-//    func configWarning() {
-//        if !isWarning {
-//            isWarning = true
-//            viewForImage.backgroundColor = UIColor(named: K.Colors.warning)
-//            parentView.layer.borderColor = UIColor(named: K.Colors.warning)?.cgColor
-//            labelView.isHidden = false
-//        } else {
-//            isWarning = false
-//            viewForImage.backgroundColor = color
-//            parentView.layer.borderColor = UIColor(named: K.Colors.mediumGray)?.cgColor
-//            labelView.isHidden = true
-//            errorLabel.resetWarning()
-//        }
-//    }
     
     func configLayout() {
         viewDefaultForImageSetup()
@@ -134,8 +118,8 @@ class RocketTextField: UIView {
 }
 
 enum TextFieldType {
-        case name
-        case email
-        case password
-        case confirmPassword
-    }
+    case name
+    case email
+    case password
+    case confirmPassword
+}

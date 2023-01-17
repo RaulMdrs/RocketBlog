@@ -33,37 +33,30 @@ class K {
         static let montserratRegular : String = "Montserrat-Regular"
         struct Size {
             static let warningSize : CGFloat = 12.0
-            
             static let buttonFontSizeGiant : CGFloat = 18
             static let buttonFontSizeLarge : CGFloat = 16
             static let buttonFontSizeMedium : CGFloat = 14
             static let buttonFontSizeSmall : CGFloat = 12
             static let buttonFontSizeTiny : CGFloat = 10
-            
             static let h1Headline : CGFloat = 36
             static let h2Headline : CGFloat = 32
             static let h3Headline : CGFloat = 30
             static let h4Headline : CGFloat = 26
             static let h5Headline : CGFloat = 22
-            
             static let s1Subtitle : CGFloat = 15
             static let s2Subtitle: CGFloat = 12
         }
     }
     
-    struct Colors{
-        
+    struct Colors {
         static let warning : String = "Danger"
         static let success : String = "Success"
         static let attention : String = "Attention"
-        
         static let black : String = "Black"
         static let white : String = "White"
-        
         static let mediumGray : String = "MediumGray"
         static let lightGray : String = "LightGray"
         static let disabledButton : String = "DisableButton"
-        
         static let primary : String = "Primary"
         static let secondary : String = "Secondary"
         static let blue : String = "Blue"
@@ -77,10 +70,20 @@ class K {
         static let home = "HomeView"
     }
     
-    struct nibName {
+    struct NibName {
         static let rocketWarningModal : String = "RocketWarningModal"
         static let rocketTextField: String = "RocketTextField"
         static let loader : String = "Loader"
+    }
+    
+    struct JsonHeaders {
+        static let accept : [String : String] = ["accept":"application/json"]
+        static let contentType : [String : String] = ["Content-Type":"application/json"]
+    }
+    
+    struct JsonMetthod {
+        static let post = "POST"
+        static let get = "GET"
     }
     
     struct Intl {
@@ -98,6 +101,7 @@ class K {
         static let errorPassword : String = "Deve conter ao menos 1 letra, 1 número, 1 caractere especial e ter 6 ou mais caracteres"
         static let errorConfirmPassword : String = "A confirmação de senha deve ser idêntica à senha."
         static let errorDefaultErrorMessage : String = "Ops!\nAlgo inesperado aconteceu."
+        static let vocativeLabel = "Olá, "
     }
     
     struct ImageTextField {
@@ -111,5 +115,13 @@ class K {
         static let success : String = "success"
         static let failed : String = "failed"
         static let accessToken : String = "accessToken"
+    }
+    
+    struct AvatarLayoutParameters {
+        static let cornerRadius : CGFloat = 25.0
+    }
+    
+    struct ParametersVerifier {
+        static let minCharacter : Int = 6
     }
 }

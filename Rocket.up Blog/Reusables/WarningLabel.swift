@@ -8,7 +8,7 @@
 import UIKit
 
 class WarningLabel: UILabel {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()

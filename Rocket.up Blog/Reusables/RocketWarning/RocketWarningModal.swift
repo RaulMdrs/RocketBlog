@@ -10,14 +10,14 @@ import UIKit
 class RocketWarningModal: UIView {
     
     @IBOutlet weak var errorLabel: ErrorModalLabel!
-
+    
     @IBOutlet weak var errorView: UIView!
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var cancelButton: RocketButton!
     @IBOutlet weak var tryAgainButton: RocketButton!
     
     var tryAgainProtocol : TryAgainProtocol?
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadViewCustom()
@@ -29,7 +29,7 @@ class RocketWarningModal: UIView {
     }
     
     func loadViewCustom() {
-        Bundle.main.loadNibNamed(K.nibName.rocketWarningModal, owner: self)
+        Bundle.main.loadNibNamed(K.NibName.rocketWarningModal, owner: self)
         parentView.frame = bounds
         parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(parentView)

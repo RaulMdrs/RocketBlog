@@ -50,6 +50,10 @@
 		FA43F2AF295B68B600FF69E9 /* ReadyToRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43F2AE295B68B600FF69E9 /* ReadyToRegister.swift */; };
 		FA43F2B4295CA69D00FF69E9 /* RocketWarningModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43F2B3295CA69D00FF69E9 /* RocketWarningModal.swift */; };
 		FA43F2B6295CA71A00FF69E9 /* RocketWarningModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA43F2B5295CA71A00FF69E9 /* RocketWarningModal.xib */; };
+		FA5C4206296C841D00AFB452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4205296C841D00AFB452 /* User.swift */; };
+		FA5C4208296C844D00AFB452 /* Base64Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4207296C844D00AFB452 /* Base64Converter.swift */; };
+		FA5C420A296C868E00AFB452 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4209296C868E00AFB452 /* UserResponse.swift */; };
+		FA5C420C296C9DEA00AFB452 /* GetUserFirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C420B296C9DEA00AFB452 /* GetUserFirstName.swift */; };
 		FABF429429536A9C000428FA /* RocketTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF429229536A9C000428FA /* RocketTextField.swift */; };
 		FABF429529536A9C000428FA /* RocketTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABF429329536A9C000428FA /* RocketTextField.xib */; };
 		FABF429A295637FD000428FA /* ParametersVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF4299295637FD000428FA /* ParametersVerifier.swift */; };
@@ -107,6 +111,10 @@
 		FA43F2AE295B68B600FF69E9 /* ReadyToRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyToRegister.swift; sourceTree = "<group>"; };
 		FA43F2B3295CA69D00FF69E9 /* RocketWarningModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketWarningModal.swift; sourceTree = "<group>"; };
 		FA43F2B5295CA71A00FF69E9 /* RocketWarningModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketWarningModal.xib; sourceTree = "<group>"; };
+		FA5C4205296C841D00AFB452 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA5C4207296C844D00AFB452 /* Base64Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Converter.swift; sourceTree = "<group>"; };
+		FA5C4209296C868E00AFB452 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		FA5C420B296C9DEA00AFB452 /* GetUserFirstName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserFirstName.swift; sourceTree = "<group>"; };
 		FABF429229536A9C000428FA /* RocketTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTextField.swift; sourceTree = "<group>"; };
 		FABF429329536A9C000428FA /* RocketTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketTextField.xib; sourceTree = "<group>"; };
 		FABF4299295637FD000428FA /* ParametersVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersVerifier.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				30894362295B7D720006004D /* RegisterResponse.swift */,
 				30E1DEE52965FA39000B8D0C /* ErrorResponse.swift */,
 				30E1DEE72965FA55000B8D0C /* LoginResponse.swift */,
+				FA5C4209296C868E00AFB452 /* UserResponse.swift */,
 			);
 			path = JsonModels;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			children = (
 				FAFF289129635D9E00C4EAC7 /* UserLogin.swift */,
 				FABF429B29563C35000428FA /* UserRegister.swift */,
+				FA5C4205296C841D00AFB452 /* User.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -289,6 +299,8 @@
 				FABF4299295637FD000428FA /* ParametersVerifier.swift */,
 				FA43F2AE295B68B600FF69E9 /* ReadyToRegister.swift */,
 				FAFF289329635E3100C4EAC7 /* ReadyToLogin.swift */,
+				FA5C4207296C844D00AFB452 /* Base64Converter.swift */,
+				FA5C420B296C9DEA00AFB452 /* GetUserFirstName.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +405,7 @@
 				FABF429A295637FD000428FA /* ParametersVerifier.swift in Sources */,
 				30E1DEE82965FA55000B8D0C /* LoginResponse.swift in Sources */,
 				FAFF289429635E3100C4EAC7 /* ReadyToLogin.swift in Sources */,
+				FA5C4206296C841D00AFB452 /* User.swift in Sources */,
 				305EED362950EA0D0045CAE4 /* SignUpViewController.swift in Sources */,
 				FA16AFC6294B8CB000C87C9B /* LandingPageViewController.swift in Sources */,
 				305EED342950E9F90045CAE4 /* SignInViewController.swift in Sources */,
@@ -406,11 +419,14 @@
 				FA16AFC4294B8CB000C87C9B /* SceneDelegate.swift in Sources */,
 				FABF429C29563C35000428FA /* UserRegister.swift in Sources */,
 				30E1DEE32965F86B000B8D0C /* Authentication.swift in Sources */,
+				FA5C420A296C868E00AFB452 /* UserResponse.swift in Sources */,
 				30894363295B7D720006004D /* RegisterResponse.swift in Sources */,
 				FAFF289829648F4E00C4EAC7 /* HomeViewController.swift in Sources */,
+				FA5C4208296C844D00AFB452 /* Base64Converter.swift in Sources */,
 				FAFF289229635D9E00C4EAC7 /* UserLogin.swift in Sources */,
 				FA43F2AD295B511700FF69E9 /* ApiManager.swift in Sources */,
 				30E1DEE62965FA39000B8D0C /* ErrorResponse.swift in Sources */,
+				FA5C420C296C9DEA00AFB452 /* GetUserFirstName.swift in Sources */,
 				FA43F2B4295CA69D00FF69E9 /* RocketWarningModal.swift in Sources */,
 				FAFF289629648CAB00C4EAC7 /* LoginSuccessData.swift in Sources */,
 			);

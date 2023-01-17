@@ -52,8 +52,8 @@ class SignInViewController: UIViewController {
     }
     
     func setTextFieldDelegate() {
-         emailTextField.textField.delegate = self
-         passwordTextField.textField.delegate = self
+        emailTextField.textField.delegate = self
+        passwordTextField.textField.delegate = self
     }
     
     func setupButton() {
@@ -108,8 +108,8 @@ class SignInViewController: UIViewController {
         } else {
             readyToLogin.setEmail(state: false)
             emailTextField.setError(message: K.Intl.errorEmailLoginScreen)
-            }
         }
+    }
     
     private func finalVerificationBeforeSendingToAPI() {
         if readyToLogin.readyToLogin() {
@@ -134,7 +134,6 @@ class SignInViewController: UIViewController {
 }
 
 extension SignInViewController : UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return false
@@ -149,7 +148,7 @@ extension SignInViewController : UITextFieldDelegate {
     }
 }
 
-extension SignInViewController : PostLoginDelegateProtocol {
+extension SignInViewController: PostLoginDelegateProtocol {
     func success(_ response: LoginResponse) {
         loader.hideLoader()
         redirectToHomeViewControllerScreen()

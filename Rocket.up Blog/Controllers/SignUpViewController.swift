@@ -97,8 +97,8 @@ class SignUpViewController: UIViewController {
               let nameLenght = nameTextField.textField.text?.count,
               let passwordLenght = passwordTextField.textField.text?.count,
               let confirmPasswordLenght = confirmPasswordTextField.textField.text?.count else {
-                                                                    signUpButton.buttonDisable()
-                                                                    return }
+            signUpButton.buttonDisable()
+            return }
         if ParametersVerifier.verifyLetterCount(texts: [
             nameLenght,
             emailLength,
@@ -139,8 +139,8 @@ class SignUpViewController: UIViewController {
         } else {
             readyToRegister.emailIsSet = false
             emailTextField.setError(message: K.Intl.errorEmail)
-            }
         }
+    }
     
     private func checkPasswordParameter() {
         guard let passwordText = passwordTextField.textField.text else {return}
@@ -177,7 +177,7 @@ class SignUpViewController: UIViewController {
         if readyToRegister.readyToRegister() {
             loader.showLoader()
             postRequest.makePostRegisterRequest(newUser)
-        } 
+        }
     }
     
     private func refreshNavigation() {
@@ -188,7 +188,6 @@ class SignUpViewController: UIViewController {
 }
 
 extension SignUpViewController : UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return false
@@ -201,10 +200,9 @@ extension SignUpViewController : UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         checkTextFieldsValue()
     }
-
 }
 
-extension SignUpViewController : PostResgisterDelegateProtocol {
+extension SignUpViewController : PostRegisterDelegateProtocol {
     func success(_ response: RegisterResponse) {
         loader.hideLoader()
         self.navigationController?.popToRootViewController(animated: false)
@@ -215,7 +213,6 @@ extension SignUpViewController : PostResgisterDelegateProtocol {
         let errorModalTest = RocketWarningModal(frame: self.parentView.frame)
         errorModalTest.setError(str: message)
         self.parentView.addSubview(errorModalTest)
-        
     }
 }
 
