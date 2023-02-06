@@ -10,7 +10,6 @@ import UIKit
 class RocketWarningModal: UIView {
     
     @IBOutlet weak var errorLabel: ErrorModalLabel!
-    
     @IBOutlet weak var errorView: UIView!
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var cancelButton: RocketButton!
@@ -49,7 +48,8 @@ class RocketWarningModal: UIView {
     }
     
     func setupButton() {
-        cancelButton.setupButton(type: .primary, title: K.Intl.understoodButton)
+        cancelButton.type = .primary
+        cancelButton.setTitle(K.Intl.understoodButton, for: .normal)
         cancelButton.layer.cornerRadius = K.DefaultButton.buttonErrorModalCornerRadius
     }
     

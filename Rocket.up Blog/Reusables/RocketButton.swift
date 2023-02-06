@@ -7,34 +7,55 @@
 
 import UIKit
 
-class RocketButton: UIButton {
-    var type : ButtonTypeEnum = .primary
+final class RocketButton: UIButton {
+    enum ButtonType {
+        case primary
+        case secondary
+        case disabled
+        case danger
+    }
     
-    func setupButton(type : ButtonTypeEnum, title : String) {
-        self.type = type
+    var type: ButtonType = .primary {
+        didSet {
+            setupTheButton()
+        }
+    }
+    
+    init() { // init from code
+        super.init(frame: .zero)
+        setupTheButton()
+    }
+    
+    required init?(coder: NSCoder) { // init from storyboard/xib
+        super.init(coder: coder)
+        setupTheButton()
+    }
+    
+    private func setupTheButton() {
         layer.cornerRadius = K.DefaultButton.buttonCornerRadius
         layer.masksToBounds = true
         tintColor = .white
         titleLabel?.font = UIFont(name: K.Fonts.montserratBold, size: K.DefaultButton.buttonFontSize)
-        backgroundColor = UIColor(named: type.rawValue)
-        setTitle(title, for: .normal)
+        
+        switch type {
+        case .primary:
+            backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.primary)
+        case .secondary:
+            backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.secondary)
+        case .disabled:
+            backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.disabledButton)
+            tintColor = .white
+        case .danger:
+            backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.danger)
+        }
     }
-    
+        
     func buttonEnable() {
         isEnabled = true
-        backgroundColor = UIColor(named: type.rawValue)
     }
     
     func buttonDisable() {
         isEnabled = false
-        tintColor = .white
-        backgroundColor = UIColor(named: ButtonTypeEnum.disabled.rawValue)
+        self.type = .disabled
     }
-}
-
-enum ButtonTypeEnum : String {
-    case primary = "Primary"
-    case secondary = "Secondary"
-    case disabled = "DisabledButton"
-    case danger = "Danger"
 }

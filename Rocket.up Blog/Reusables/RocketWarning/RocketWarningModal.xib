@@ -75,7 +75,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Ap4-EQ-xVf"/>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10559809602649006" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.26673090852649012" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fhF-iI-r9I" firstAttribute="leading" secondItem="Ap4-EQ-xVf" secondAttribute="leading" constant="20" id="4OS-7w-cAA"/>
                 <constraint firstItem="fhF-iI-r9I" firstAttribute="top" secondItem="Ap4-EQ-xVf" secondAttribute="top" constant="120" id="B9G-e0-lqx"/>

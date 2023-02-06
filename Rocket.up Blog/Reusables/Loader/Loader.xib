@@ -22,11 +22,11 @@
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hQv-pj-Pvd">
                     <rect key="frame" x="176.66666666666666" y="358.66666666666669" width="37" height="37"/>
-                    <color key="color" name="Primary"/>
+                    <color key="color" name="Secondary"/>
                 </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.41200000047683716" green="0.48600000143051147" blue="0.7369999885559082" alpha="0.19282924107142857" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="hQv-pj-Pvd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EZV-nH-dyR"/>
                 <constraint firstItem="hQv-pj-Pvd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-45" id="MCK-k1-5Yj"/>
@@ -35,8 +35,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="Primary">
-            <color red="0.79600000381469727" green="0.17299999296665192" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Secondary">
+            <color red="0.41200000047683716" green="0.48600000143051147" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

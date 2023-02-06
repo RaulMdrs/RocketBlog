@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionCell" id="gTV-IL-0wX" customClass="PostCollectionViewCell" customModule="Rocket_up_Blog" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="301"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="220" height="301"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageteste" translatesAutoresizingMaskIntoConstraints="NO" id="JpT-ln-F5G">
+                        <rect key="frame" x="7" y="7" width="206" height="170"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="170" id="gfQ-Ab-h1m"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alguma coisa mas tem que quebrar a linha quando chegar na primeira e truncar quando chegar na segunda" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lE-AD-oBP">
+                        <rect key="frame" x="8" y="183" width="204" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="gEv-Al-zoW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="sS8-JD-JM9">
+                        <rect key="frame" x="8" y="232" width="204" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4eP-qg-RNj">
+                                <rect key="frame" x="0.0" y="1.6666666666666679" width="64" height="61.333333333333336"/>
+                                <color key="tintColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4eP-qg-RNj" secondAttribute="height" multiplier="1:1" id="Se4-6b-YUi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AY-ax-Vo7">
+                                <rect key="frame" x="67" y="0.0" width="137" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="JpT-ln-F5G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="26r-pA-skm"/>
+                <constraint firstItem="sS8-JD-JM9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="6Yo-it-nZY"/>
+                <constraint firstAttribute="bottom" secondItem="sS8-JD-JM9" secondAttribute="bottom" constant="5" id="Ame-W1-waV"/>
+                <constraint firstItem="7lE-AD-oBP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="NdP-eH-9hS"/>
+                <constraint firstItem="sS8-JD-JM9" firstAttribute="top" secondItem="7lE-AD-oBP" secondAttribute="bottom" constant="4" id="TNQ-n1-EJk"/>
+                <constraint firstAttribute="trailing" secondItem="sS8-JD-JM9" secondAttribute="trailing" constant="8" id="Vfc-sU-e8Y"/>
+                <constraint firstAttribute="trailing" secondItem="7lE-AD-oBP" secondAttribute="trailing" constant="8" id="hRV-yk-RCa"/>
+                <constraint firstItem="JpT-ln-F5G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="jky-N7-bbq"/>
+                <constraint firstItem="7lE-AD-oBP" firstAttribute="top" secondItem="JpT-ln-F5G" secondAttribute="bottom" constant="6" id="qKs-zA-JdX"/>
+                <constraint firstAttribute="trailing" secondItem="JpT-ln-F5G" secondAttribute="trailing" constant="7" id="wKP-rI-Q9D"/>
+            </constraints>
+            <size key="customSize" width="401" height="373"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="7lE-AD-oBP" id="yeU-lC-3iM"/>
+                <outlet property="personImage" destination="4eP-qg-RNj" id="uNa-8C-fhb"/>
+                <outlet property="personName" destination="5AY-ax-Vo7" id="GII-qi-hJC"/>
+                <outlet property="postImage" destination="JpT-ln-F5G" id="zcP-q6-6qQ"/>
+            </connections>
+            <point key="canvasLocation" x="332.30769230769232" y="135.42654028436019"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imageteste" width="853.33331298828125" height="480"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <namedColor name="Primary">
+            <color red="0.79600000381469727" green="0.17299999296665192" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

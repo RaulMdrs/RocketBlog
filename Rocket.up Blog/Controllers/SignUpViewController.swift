@@ -23,10 +23,9 @@ class SignUpViewController: UIViewController {
     var postRequest = ApiManager()
     var readyToRegister = ReadyToRegister()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        postRequest.registerDelegate = self
+        postRequest.requestDelegate = self
         setupLayout()
         setupGesture()
     }
@@ -58,7 +57,8 @@ class SignUpViewController: UIViewController {
     }
     
     func setupButton() {
-        signUpButton.setupButton(type: .secondary, title: K.Intl.signUpButtonTitle)
+        signUpButton.type = .secondary
+        signUpButton.setTitle(K.Intl.signUpButtonTitle, for: .normal)
         signUpButton.buttonEnable()
     }
     func setupLabel() {
@@ -106,6 +106,7 @@ class SignUpViewController: UIViewController {
             confirmPasswordLenght
         ]) {
             signUpButton.buttonEnable()
+            signUpButton.type = .secondary
         } else {
             signUpButton.buttonDisable()
         }
@@ -176,7 +177,12 @@ class SignUpViewController: UIViewController {
     private func finalVerificationBeforeSendingToAPI() {
         if readyToRegister.readyToRegister() {
             loader.showLoader()
-            postRequest.makePostRegisterRequest(newUser)
+            postRequest.genericRequest(model: RegisterResponse.self, path: ApiPath.apiRegisterPath(), method: .post, header: ["accept":"application/json",
+                "Content-Type":"application/json"], body: [
+                "name": newUser.name,
+                "email": newUser.email,
+                "password": newUser.password,
+                "confirmPassword":newUser.confirmPassword])
         }
     }
     
@@ -201,18 +207,16 @@ extension SignUpViewController : UITextFieldDelegate {
         checkTextFieldsValue()
     }
 }
-
-extension SignUpViewController : PostRegisterDelegateProtocol {
-    func success(_ response: RegisterResponse) {
+extension SignUpViewController: RequestDelegate {
+    func success<T>(_ response: T) {
+        guard response is RegisterResponse else {return}
         loader.hideLoader()
         self.navigationController?.popToRootViewController(animated: false)
     }
     
-    func failed(_ message: String) {
+    func errorMessage(_ message: String) {
         loader.hideLoader()
-        let errorModalTest = RocketWarningModal(frame: self.parentView.frame)
-        errorModalTest.setError(str: message)
-        self.parentView.addSubview(errorModalTest)
+        ShowError.ShowErrorModal(targetView: self.view, message: message, animationDuration: 0.5)
     }
 }
 

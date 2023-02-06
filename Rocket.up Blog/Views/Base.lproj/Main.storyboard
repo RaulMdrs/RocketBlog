@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D0l-sl-x3J">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,29 +10,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Landing Page View Controller-->
+        <!-- -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="LandingPageViewController" customModule="Rocket_up_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLandindPage" translatesAutoresizingMaskIntoConstraints="NO" id="bKJ-zM-gLK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocketUpLogo" translatesAutoresizingMaskIntoConstraints="NO" id="seY-iW-bo1">
-                                <rect key="frame" x="200" y="180" width="200" height="200"/>
+                                <rect key="frame" x="95" y="302" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="QZb-6Z-dM4"/>
                                     <constraint firstAttribute="height" constant="200" id="xog-AM-lnu"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zmo-u8-Olb">
-                                <rect key="frame" x="55" y="444" width="490" height="112"/>
+                                <rect key="frame" x="55" y="566" width="280" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiZ-YG-jdk" userLabel="LoginButton" customClass="RocketButton" customModule="Rocket_up_Blog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="490" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="7js-5z-o2B"/>
                                         </constraints>
@@ -42,7 +44,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-3I-NVM" userLabel="SignUpButton" customClass="RocketButton" customModule="Rocket_up_Blog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="490" height="52"/>
+                                        <rect key="frame" x="0.0" y="60" width="280" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Rnc-dB-Ur9"/>
                                         </constraints>
@@ -70,7 +72,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmo-u8-Olb" secondAttribute="trailing" constant="55" id="wYH-oL-daw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hpd-L5-6dg">
+                    <navigationItem key="navigationItem" title=" " id="hpd-L5-6dg">
                         <barButtonItem key="backBarButtonItem" title=" " id="Ytw-fr-TNP"/>
                     </navigationItem>
                     <connections>

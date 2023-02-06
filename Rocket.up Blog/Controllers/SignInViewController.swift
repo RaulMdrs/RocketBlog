@@ -22,7 +22,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        postRequest.loginDelegate = self
+        postRequest.requestDelegate = self
         setupLayout()
         setupGesture()
     }
@@ -57,8 +57,9 @@ class SignInViewController: UIViewController {
     }
     
     func setupButton() {
-        signInButton.setupButton(type: .primary, title: K.Intl.signInButtonTitle)
         signInButton.buttonEnable()
+        signInButton.type = .primary
+        signInButton.setTitle(K.Intl.signInButtonTitle, for: .normal)
     }
     
     func setupTextField() {
@@ -90,11 +91,14 @@ class SignInViewController: UIViewController {
         guard let password = passwordTextField.textField.text else {return}
         if (ParametersVerifier.verifyLetterCount(texts:  [emailLength])) && (ParametersVerifier.verifyLetterCountLoginPassword(text: password) == true) {
             signInButton.buttonEnable()
+            signInButton.type = .primary
+            signInButton.setTitle(K.Intl.signInButtonTitle, for: .normal)
             guard let textReceived = passwordTextField.textField.text else {return}
             userToLogin.password = textReceived
             readyToLogin.setPassword(state: true)
         } else {
             signInButton.buttonDisable()
+            signInButton.setTitle(K.Intl.signInButtonTitle, for: .disabled)
             readyToLogin.setPassword(state: false)
         }
     }
@@ -114,7 +118,7 @@ class SignInViewController: UIViewController {
     private func finalVerificationBeforeSendingToAPI() {
         if readyToLogin.readyToLogin() {
             loader.showLoader()
-            postRequest.makePostLoginRequest(userToLogin)
+            postRequest.genericRequest(model: LoginResponse.self, path: ApiPath.apiLoginPath(), method: .post, header: ["accept":"application/json", "Content-Type":"application/json"], body: ["email": userToLogin.email, "password": userToLogin.password])
         }
     }
     
@@ -147,17 +151,18 @@ extension SignInViewController : UITextFieldDelegate {
         checkTextFieldsValue()
     }
 }
-
-extension SignInViewController: PostLoginDelegateProtocol {
-    func success(_ response: LoginResponse) {
+extension SignInViewController: RequestDelegate {
+    func success<T>(_ response: T) {
+        guard let loginResponse = response as? LoginResponse else {return}
+        guard let token = loginResponse.data?.accessToken else {return}
+        Authentication.shared.accessToken = token
         loader.hideLoader()
         redirectToHomeViewControllerScreen()
     }
     
-    func failed(_ message: String) {
+    func errorMessage(_ message: String) {
         loader.hideLoader()
-        let errorModalTest = RocketWarningModal(frame: self.parentView.frame)
-        errorModalTest.setError(str: message)
-        self.parentView.addSubview(errorModalTest)
+        ShowError.ShowErrorModal(targetView: self.view, message: message, animationDuration: 0.5)
     }
 }
+

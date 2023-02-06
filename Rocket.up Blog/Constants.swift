@@ -30,7 +30,9 @@ class K {
     struct Fonts {
         static let montserratBold : String = "Montserrat-Bold"
         static let montserratMedium : String = "Montserrat-Medium"
+        static let montserratSemiBold : String = "Montserrat-SemiBold"
         static let montserratRegular : String = "Montserrat-Regular"
+        static let quicksandRegular : String = "Quicksand-Regular"
         struct Size {
             static let warningSize : CGFloat = 12.0
             static let buttonFontSizeGiant : CGFloat = 18
@@ -68,12 +70,16 @@ class K {
         static let signIn = "SignInView"
         static let signUp = "SignUpView"
         static let home = "HomeView"
+        static let post = "PostView"
     }
     
     struct NibName {
         static let rocketWarningModal : String = "RocketWarningModal"
         static let rocketTextField: String = "RocketTextField"
         static let loader : String = "Loader"
+        static let sliderTab : String = "SliderTabView"
+        static let postCell : String = "PostCollectionViewCell"
+        static let personCell : String = "PersonCardCollectionViewCell"
     }
     
     struct JsonHeaders {
@@ -118,10 +124,16 @@ class K {
     }
     
     struct AvatarLayoutParameters {
-        static let cornerRadius : CGFloat = 25.0
+        static let cornerRadiusHomeViewController : CGFloat = 25.0
+        static let cornerRadiusPostCell : CGFloat = 15.0
     }
     
     struct ParametersVerifier {
         static let minCharacter : Int = 6
+    }
+    
+    struct Identifier {
+        static let postCell = "PostCollectionCell"
+        static let postViewController = "PostViewController"
     }
 }

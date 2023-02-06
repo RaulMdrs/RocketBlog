@@ -19,7 +19,6 @@ class LandingPageViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: RocketButton) {
         let storyboard = UIStoryboard(name: K.StoryboardNames.signIn, bundle: nil)
-        
         let controller = storyboard.instantiateViewController(withIdentifier: K.StoryboardNames.signIn) as! SignInViewController
         
         navigationController?.pushViewController(controller, animated: true)
@@ -27,15 +26,16 @@ class LandingPageViewController: UIViewController {
     
     @IBAction func signUpButtonPressed(_ sender: RocketButton) {
         let storyboard = UIStoryboard(name: K.StoryboardNames.signUp, bundle: nil)
-        
         let controller = storyboard.instantiateViewController(withIdentifier: K.StoryboardNames.signUp) as! SignUpViewController
         
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func configButtons(){
-        signInButton.setupButton(type: .primary, title: K.Intl.signInButtonTitle)
-        signUpButton.setupButton(type: .secondary, title: K.Intl.signUpButtonTitle)
+        signInButton.type = .primary
+        signInButton.setTitle(K.Intl.signInButtonTitle, for: .normal)
+        signUpButton.type = .secondary
+        signUpButton.setTitle(K.Intl.signUpButtonTitle, for: .normal)
     }
 
 }
