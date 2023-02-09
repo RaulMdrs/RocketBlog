@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!-- -->
+        <!--Sign In View Controller-->
         <scene sceneID="wRp-lM-9JL">
             <objects>
                 <viewController storyboardIdentifier="SignInView" id="mAR-9f-Onw" customClass="SignInViewController" customModule="Rocket_up_Blog" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,16 +87,16 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Geh-zc-0yo">
-                                                <rect key="frame" x="95.000000000000014" y="644" width="200.33333333333337" height="44"/>
+                                                <rect key="frame" x="83" y="644" width="224" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criar nova conta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJP-my-2Me">
-                                                        <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="44"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                         <color key="textColor" name="MediumGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN3-xu-Lcd">
-                                                        <rect key="frame" x="105.33333333333334" y="0.0" width="95" height="44"/>
+                                                        <rect key="frame" x="118.66666666666666" y="0.0" width="105.33333333333334" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="jo9-6N-bTc"/>
                                                         </constraints>
@@ -150,7 +150,7 @@
                             <constraint firstItem="cov-kj-Hbx" firstAttribute="top" secondItem="P8E-h7-clQ" secondAttribute="top" id="mf1-hv-1aN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title=" " id="kyj-Nb-fzK">
+                    <navigationItem key="navigationItem" id="kyj-Nb-fzK">
                         <barButtonItem key="backBarButtonItem" title=" " id="dCc-XF-Cfa"/>
                     </navigationItem>
                     <connections>

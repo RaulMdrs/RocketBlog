@@ -26,7 +26,5 @@ struct Author: Codable {
         } else {
             return name
         }
-
-       
     }
 }

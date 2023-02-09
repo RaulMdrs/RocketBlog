@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var peopleView: UIView!
     @IBOutlet weak var sliderBarView: SliderTab!
 
-    var user: User = User(avatar: "", bio: "", name: "", email: "", background: nil)
+    var user: User = User(avatar: "", bio: "", name: "", email: "", background: nil, id: "")
     var loader = LoaderView()
     var getRequest = ApiManager()
     
@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         } else if segue.identifier == "toPeople" {
             if let destinationViewController = segue.destination as? PeopleViewController {
                 peopleViewController = destinationViewController
+                peopleViewController?.loaderProtocol = self
             }
         }
     }

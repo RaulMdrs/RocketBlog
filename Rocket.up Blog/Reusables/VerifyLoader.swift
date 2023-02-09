@@ -9,10 +9,10 @@ import Foundation
 
 struct VerifyLoader {
     static var headerRequest = false
-    static var forYouRequest = false
+    static var secondRequest = false
     
     static func verifyLoader(loader : LoaderView) {
-        if headerRequest && forYouRequest {
+        if headerRequest && secondRequest{
             loader.hideLoader()
         }
         else {

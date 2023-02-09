@@ -110,6 +110,12 @@ class K {
         static let vocativeLabel = "Olá, "
     }
     
+    struct Images {
+        static let defaultPostCardBackground : String = "DefaultPostCardBackground"
+        static let backgroundLandingPage : String = "backgroundLandingPage"
+        static let rocketUpLogo : String = "rocketUpLogo"
+    }
+    
     struct ImageTextField {
         static let social : String = "social"
         static let mail : String = "mail"
@@ -136,4 +142,6 @@ class K {
         static let postCell = "PostCollectionCell"
         static let postViewController = "PostViewController"
     }
+    
+    
 }

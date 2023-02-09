@@ -8,9 +8,9 @@ extension HomeViewController : sliderTabProtocol {
     }
     
     func redirectToPeople() {
-        VerifyLoader.forYouRequest = false
         forYouView.isHidden = true
         peopleView.isHidden = false
+        peopleViewController?.getPeople()
     }
 }
 
@@ -32,3 +32,4 @@ extension HomeViewController: RequestDelegate {
         ShowError.ShowErrorModal(targetView: self.view, message: message, animationDuration: 0.5)
     }
 }
+

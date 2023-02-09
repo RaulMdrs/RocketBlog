@@ -23,10 +23,10 @@ struct ApiManager {
         request.httpMethod = method.rawValue
         
         for item in header {
+    
             request.addValue(item.value, forHTTPHeaderField: item.key)
         }
-        
-        if let body = body {
+           if let body = body {
             guard let bodyData = try? JSONSerialization.data(withJSONObject: body, options: []) else {
                 DispatchQueue.main.async {
                     requestDelegate?.errorMessage(K.Intl.errorDefaultErrorMessage)

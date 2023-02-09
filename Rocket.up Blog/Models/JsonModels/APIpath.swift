@@ -14,6 +14,7 @@ struct ApiPath {
     private static let login : String = "/auth/login"
     private static let getMe : String = "/users/me"
     private static let userPost : String = "/posts/featured"
+    private static let people : String = "/users/featured"
     
     static func apiRegisterPath() -> String {
         "\(self.apiURL)\(self.register)"
@@ -29,5 +30,9 @@ struct ApiPath {
     
     static func apiUserPostPath() -> String {
         "\(self.apiURL)\(self.userPost)"
+    }
+    
+    static func apiPeoplePath() -> String {
+        "\(self.apiURL)\(self.people)"
     }
 }

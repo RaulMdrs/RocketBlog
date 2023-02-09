@@ -20,8 +20,8 @@
 		3088FAAF297855A5006AAD9D /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3088FAAE297855A5006AAD9D /* HomeViewControllerExtension.swift */; };
 		3088FAB129785E86006AAD9D /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3088FAB029785E86006AAD9D /* ForYouViewController.swift */; };
 		3088FAB9297869D4006AAD9D /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3088FAB7297869D4006AAD9D /* PostCollectionViewCell.swift */; };
-		3088FABA297869D4006AAD9D /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3088FAB8297869D4006AAD9D /* PostCollectionViewCell.xib */; };
 		30894363295B7D720006004D /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30894362295B7D720006004D /* RegisterResponse.swift */; };
+		30923B3629918287007CA54C /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30923B3529918287007CA54C /* PeopleResponse.swift */; };
 		309350882981B2E4004C6219 /* VerifyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309350872981B2E4004C6219 /* VerifyLoader.swift */; };
 		30D0767629688728000B2E38 /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D0767529688728000B2E38 /* Loader.xib */; };
 		30D0767829688748000B2E38 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0767729688748000B2E38 /* LoaderView.swift */; };
@@ -55,7 +55,6 @@
 		FA0A08632979AF1C00164366 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA0A085E2979AF1C00164366 /* Quicksand-Regular.ttf */; };
 		FA0A08642979AF1C00164366 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA0A085F2979AF1C00164366 /* Quicksand-Light.ttf */; };
 		FA0A08682979B1BE00164366 /* PersonCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A08662979B1BE00164366 /* PersonCardCollectionViewCell.swift */; };
-		FA0A08692979B1BE00164366 /* PersonCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0A08672979B1BE00164366 /* PersonCardCollectionViewCell.xib */; };
 		FA0A086B2979B3F000164366 /* PeopleViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A086A2979B3F000164366 /* PeopleViewControllerExtension.swift */; };
 		FA0A086D2979B45400164366 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A086C2979B45400164366 /* PeopleViewController.swift */; };
 		FA0A086F2979B5BE00164366 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A086E2979B5BE00164366 /* ProfileViewController.swift */; };
@@ -67,7 +66,6 @@
 		FA16AFC2294B8CB000C87C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16AFC1294B8CB000C87C9B /* AppDelegate.swift */; };
 		FA16AFC4294B8CB000C87C9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16AFC3294B8CB000C87C9B /* SceneDelegate.swift */; };
 		FA16AFC6294B8CB000C87C9B /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16AFC5294B8CB000C87C9B /* LandingPageViewController.swift */; };
-		FA16AFC9294B8CB000C87C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA16AFC7294B8CB000C87C9B /* Main.storyboard */; };
 		FA16AFCB294B8CB200C87C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA16AFCA294B8CB200C87C9B /* Assets.xcassets */; };
 		FA16AFCE294B8CB200C87C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA16AFCC294B8CB200C87C9B /* LaunchScreen.storyboard */; };
 		FA1F5FC72950E31F004C0D2E /* SignInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F5FC62950E31F004C0D2E /* SignInView.storyboard */; };
@@ -106,8 +104,8 @@
 		3088FAAE297855A5006AAD9D /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
 		3088FAB029785E86006AAD9D /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		3088FAB7297869D4006AAD9D /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
-		3088FAB8297869D4006AAD9D /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		30894362295B7D720006004D /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		30923B3529918287007CA54C /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
 		309350872981B2E4004C6219 /* VerifyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyLoader.swift; sourceTree = "<group>"; };
 		30D0767529688728000B2E38 /* Loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 		30D0767729688748000B2E38 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		FA0A085E2979AF1C00164366 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		FA0A085F2979AF1C00164366 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		FA0A08662979B1BE00164366 /* PersonCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardCollectionViewCell.swift; sourceTree = "<group>"; };
-		FA0A08672979B1BE00164366 /* PersonCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA0A086A2979B3F000164366 /* PeopleViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewControllerExtension.swift; sourceTree = "<group>"; };
 		FA0A086C2979B45400164366 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		FA0A086E2979B5BE00164366 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +151,6 @@
 		FA16AFC1294B8CB000C87C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA16AFC3294B8CB000C87C9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA16AFC5294B8CB000C87C9B /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
-		FA16AFC8294B8CB000C87C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA16AFCA294B8CB200C87C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA16AFCD294B8CB200C87C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA16AFCF294B8CB200C87C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				3088FAB7297869D4006AAD9D /* PostCollectionViewCell.swift */,
-				3088FAB8297869D4006AAD9D /* PostCollectionViewCell.xib */,
 			);
 			path = PostCell;
 			sourceTree = "<group>";
@@ -238,6 +233,7 @@
 				30E1DEE72965FA55000B8D0C /* LoginResponse.swift */,
 				FA5C4209296C868E00AFB452 /* UserResponse.swift */,
 				FA0A0874297B137600164366 /* PostResponse.swift */,
+				30923B3529918287007CA54C /* PeopleResponse.swift */,
 				FA0A0876297B13C700164366 /* FeaturedPosts.swift */,
 				FA0A0878297F164C00164366 /* GenericResponse.swift */,
 			);
@@ -333,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				FA0A08662979B1BE00164366 /* PersonCardCollectionViewCell.swift */,
-				FA0A08672979B1BE00164366 /* PersonCardCollectionViewCell.xib */,
 			);
 			path = PeopleCell;
 			sourceTree = "<group>";
@@ -375,7 +370,6 @@
 		FA16AFD6294BA18E00C87C9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA16AFC7294B8CB000C87C9B /* Main.storyboard */,
 				FA1F5FC62950E31F004C0D2E /* SignInView.storyboard */,
 				FA1F5FC82950E32C004C0D2E /* SignUpView.storyboard */,
 				FA277BB829649F00007F61FF /* HomeView.storyboard */,
@@ -506,8 +500,6 @@
 				30D34C5729521E3000AB48BA /* Montserrat-Regular.ttf in Resources */,
 				30D0767629688728000B2E38 /* Loader.xib in Resources */,
 				FA43F2B6295CA71A00FF69E9 /* RocketWarningModal.xib in Resources */,
-				FA0A08692979B1BE00164366 /* PersonCardCollectionViewCell.xib in Resources */,
-				3088FABA297869D4006AAD9D /* PostCollectionViewCell.xib in Resources */,
 				30D34C4E29521E3000AB48BA /* Montserrat-ThinItalic.ttf in Resources */,
 				30D34C5229521E3000AB48BA /* Montserrat-LightItalic.ttf in Resources */,
 				FA0A08712979B5D600164366 /* ProfileView.storyboard in Resources */,
@@ -520,7 +512,6 @@
 				FA1F5FC92950E32C004C0D2E /* SignUpView.storyboard in Resources */,
 				FA0A08642979AF1C00164366 /* Quicksand-Light.ttf in Resources */,
 				30D34C5A29521E3000AB48BA /* Montserrat-ExtraLight.ttf in Resources */,
-				FA16AFC9294B8CB000C87C9B /* Main.storyboard in Resources */,
 				30D34C4929521E3000AB48BA /* Montserrat-MediumItalic.ttf in Resources */,
 				30D34C5129521E3000AB48BA /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				30D34C4C29521E3000AB48BA /* Montserrat-ExtraBold.ttf in Resources */,
@@ -582,6 +573,7 @@
 				FA43F2AD295B511700FF69E9 /* ApiManager.swift in Sources */,
 				30E1DEE62965FA39000B8D0C /* ErrorResponse.swift in Sources */,
 				FA5C420C296C9DEA00AFB452 /* GetUserFirstName.swift in Sources */,
+				30923B3629918287007CA54C /* PeopleResponse.swift in Sources */,
 				FA43F2B4295CA69D00FF69E9 /* RocketWarningModal.swift in Sources */,
 				FAFF289629648CAB00C4EAC7 /* LoginSuccessData.swift in Sources */,
 				FA0A086B2979B3F000164366 /* PeopleViewControllerExtension.swift in Sources */,
@@ -591,14 +583,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA16AFC7294B8CB000C87C9B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA16AFC8294B8CB000C87C9B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA16AFCC294B8CB200C87C9B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -736,7 +720,6 @@
 				INFOPLIST_FILE = "Rocket.up Blog/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -764,7 +747,6 @@
 				INFOPLIST_FILE = "Rocket.up Blog/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (

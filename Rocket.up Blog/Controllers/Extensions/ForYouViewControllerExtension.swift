@@ -27,18 +27,23 @@ extension ForYouViewController : UICollectionViewDelegate {
         navigationController?.pushViewController(postScreen, animated: true)
     }
 }
+
+extension ForYouViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 220, height: 260)
+    }
+}
 extension ForYouViewController: RequestDelegate {
     func success<T>(_ response: T) {
-        loader.hideLoader()
+        VerifyLoader.secondRequest = true
+        loaderProtocol?.hideLoader()
         guard let postResponse = response as? PostResponse else {return}
         self.arrayPosts = postResponse.data?.featuredPosts
         forYouCollectionView.reloadData()
-        VerifyLoader.forYouRequest = true
-        loaderProtocol?.hideLoader()
     }
     
     func errorMessage(_ message: String) {
-        VerifyLoader.forYouRequest = true
+        VerifyLoader.secondRequest = true
         loaderProtocol?.hideLoader()
         ShowError.ShowErrorModal(targetView: self.view, message: message, animationDuration: 0.5)
     }
