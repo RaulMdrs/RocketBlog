@@ -9,14 +9,89 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet var parentView: UIView!
-    @IBOutlet weak var signUpLabel: UILabel!
-    @IBOutlet weak var signUpButton: RocketButton!
-    @IBOutlet weak var nameTextField: RocketTextField!
-    @IBOutlet weak var emailTextField: RocketTextField!
-    @IBOutlet weak var passwordTextField: RocketTextField!
-    @IBOutlet weak var confirmPasswordTextField: RocketTextField!
-    
+    let parentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    let signUpLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+      //  label.text = K.Intl.signUpLabelText
+        label.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.h3Headline)
+        label.numberOfLines = 1
+        return label
+    }()
+    let signUpButton: RocketButton! = {
+       let rocketButton = RocketButton()
+        rocketButton.translatesAutoresizingMaskIntoConstraints = false
+        rocketButton.type = .secondary
+        rocketButton.setTitle(K.Intl.signUpButtonTitle, for: .normal)
+        rocketButton.buttonEnable()
+        return rocketButton
+    }()
+    let nameTextField: RocketTextField = {
+        let rocketTextField = RocketTextField()
+        rocketTextField.translatesAutoresizingMaskIntoConstraints = false
+        rocketTextField.customTextField(type: .name)
+        return rocketTextField
+    }()
+    let emailTextField: RocketTextField = {
+        let rocketTextField = RocketTextField()
+        rocketTextField.translatesAutoresizingMaskIntoConstraints = false
+        rocketTextField.customTextField(type: .email)
+        return rocketTextField
+    }()
+    let passwordTextField: RocketTextField = {
+        let rocketTextField = RocketTextField()
+        rocketTextField.translatesAutoresizingMaskIntoConstraints = false
+        rocketTextField.customTextField(type: .password)
+        return rocketTextField
+    }()
+    let confirmPasswordTextField: RocketTextField = {
+        let rocketTextField = RocketTextField()
+        rocketTextField.translatesAutoresizingMaskIntoConstraints = false
+        rocketTextField.customTextField(type: .confirmPassword)
+        return rocketTextField
+    }()
+    let textFieldsStackView : UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.axis = .vertical
+        stack.spacing = 11
+        return stack
+    }()
+    let headerStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.alignment = .center
+        stack.distribution = .fill
+        stack.axis = .vertical
+        stack.spacing = 40
+        return stack
+    }()
+    let scrollView : UIScrollView = {
+        let scroll = UIScrollView()
+        return scroll
+    }()
+    let contentView : UIView = {
+        let view = UIView()
+        return view
+    }()
+    let logo : UIImageView = {
+        let image = UIImageView()
+        return image
+    }()
+    let bottomStackView : UIStackView = {
+        let stack = UIStackView()
+        return stack
+    }()
+    let areYouSubscribed : UILabel = {
+        let label = UILabel()
+        return label
+    }()
     var loader = LoaderView()
     
     var newUser = UserRegister(name: "", email: "", password: "", confirmPassword: "")

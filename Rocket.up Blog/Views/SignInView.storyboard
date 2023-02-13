@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--View Controller-->
         <scene sceneID="wRp-lM-9JL">
             <objects>
-                <viewController storyboardIdentifier="SignInView" id="mAR-9f-Onw" customClass="SignInViewController" customModule="Rocket_up_Blog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mAR-9f-Onw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P8E-h7-clQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,21 +82,18 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <action selector="signInButtonPressed:" destination="mAR-9f-Onw" eventType="touchUpInside" id="8iO-Sy-c61"/>
-                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Geh-zc-0yo">
-                                                <rect key="frame" x="83" y="644" width="224" height="44"/>
+                                                <rect key="frame" x="95.000000000000014" y="644" width="200.33333333333337" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criar nova conta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJP-my-2Me">
-                                                        <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="44"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="44"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                         <color key="textColor" name="MediumGray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN3-xu-Lcd">
-                                                        <rect key="frame" x="118.66666666666666" y="0.0" width="105.33333333333334" height="44"/>
+                                                        <rect key="frame" x="105.33333333333334" y="0.0" width="95" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="jo9-6N-bTc"/>
                                                         </constraints>
@@ -105,9 +102,6 @@
                                                             <fontDescription key="titleFontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="13"/>
                                                             <color key="baseForegroundColor" name="Secondary"/>
                                                         </buttonConfiguration>
-                                                        <connections>
-                                                            <action selector="signUpButtonPressed:" destination="mAR-9f-Onw" eventType="touchUpInside" id="oJC-5A-v66"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -155,9 +149,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="AP0-zq-iNa" id="0aP-hd-dyi"/>
-                        <outlet property="parentView" destination="P8E-h7-clQ" id="0Tk-Un-fkU"/>
                         <outlet property="passwordTextField" destination="JNr-qp-0Si" id="aVw-1X-wz9"/>
-                        <outlet property="signInButton" destination="ygr-nk-tJH" id="bJA-tp-i9E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfK-OK-mlj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
