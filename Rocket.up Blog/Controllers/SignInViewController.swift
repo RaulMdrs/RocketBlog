@@ -3,13 +3,16 @@ import UIKit
 class SignInViewController: UIViewController {
     
     let identifier = "SignInView"
+    var loader = LoaderView()
+    var userToLogin : UserLogin = UserLogin(email: "", password: "")
+    var postRequest = ApiManager()
+    var readyToLogin = ReadyToLogin()
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsVerticalScrollIndicator = true
-        scrollView.isScrollEnabled = true
-        scrollView.alwaysBounceVertical = true
+        scrollView.alwaysBounceVertical = false
         return scrollView
     }()
 
@@ -32,14 +35,14 @@ class SignInViewController: UIViewController {
     private let rocketLogo: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage(named: "procket2")
+        img.image = UIImage(named: K.Images.rocketUpLogoAndTitle)
         return img
     }()
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Bem vindo!"
+        label.text = K.Intl.welcomeText
         label.font = UIFont(name: K.Fonts.montserratBold, size: 30)
         label.tintColor = .black
         return label
@@ -85,13 +88,17 @@ class SignInViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
+        stackView.spacing = 3
         return stackView
     }()
 
     private let newAccountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Criar nova conta?"
+        label.textColor = UIColor(named: K.Colors.mediumGray)
+        label.numberOfLines = 1
+        label.font = UIFont(name: K.Fonts.montserratSemiBold, size: 13)
+        label.text = K.Intl.createNewAccountText
         return label
     }()
 
@@ -99,17 +106,12 @@ class SignInViewController: UIViewController {
         let button = RocketButton()
         button.type = .quaternary
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Inscrever-se", for: .normal)
+        button.setTitle(K.Intl.signUpLabelText, for: .normal)
         button.addAction(UIAction(handler: { UIAction in
             self.signUpButtonPressed()
         }), for: .touchUpInside)
         return button
     }()
-
-    var loader = LoaderView()
-    var userToLogin : UserLogin = UserLogin(email: "", password: "")
-    var postRequest = ApiManager()
-    var readyToLogin = ReadyToLogin()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +120,7 @@ class SignInViewController: UIViewController {
         postRequest.requestDelegate = self
         setupLayout()
         setupGesture()
+        setupNavigationItem()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +133,10 @@ class SignInViewController: UIViewController {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    private func setupNavigationItem() {
+        navigationItem.backButtonTitle = " "
     }
 
     private func setupGesture() {

@@ -107,13 +107,19 @@ class K {
         static let errorPassword : String = "Deve conter ao menos 1 letra, 1 número, 1 caractere especial e ter 6 ou mais caracteres"
         static let errorConfirmPassword : String = "A confirmação de senha deve ser idêntica à senha."
         static let errorDefaultErrorMessage : String = "Ops!\nAlgo inesperado aconteceu."
-        static let vocativeLabel = "Olá, "
+        static let vocativeLabel : String = "Olá, "
+        static let signUpLabelText : String = "Inscrever-se"
+        static let signInLabelText : String = "Login"
+        static let areYouSubscribed : String = "Você já é inscrito?"
+        static let createNewAccountText : String = "Criar nova conta?"
+        static let welcomeText : String = "Bem vindo!"
     }
     
     struct Images {
         static let defaultPostCardBackground : String = "DefaultPostCardBackground"
         static let backgroundLandingPage : String = "backgroundLandingPage"
         static let rocketUpLogo : String = "rocketUpLogo"
+        static let rocketUpLogoAndTitle : String = "rocketUpLogoAndTitle"
     }
     
     struct ImageTextField {

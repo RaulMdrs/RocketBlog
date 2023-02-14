@@ -8,47 +8,59 @@
 import UIKit
 
 class LoaderView: UIView {
-    @IBOutlet var parentView: UIView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private let loader : UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.style = .large
+        activityIndicator.color = UIColor(named: K.Colors.secondary)
+        activityIndicator.backgroundColor = UIColor(named: K.Colors.secondary)?.withAlphaComponent(0.5)
+        return activityIndicator
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadViewCustom()
         setupLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadViewCustom()
         setupLayout()
     }
     
-    func loadViewCustom() {
-        Bundle.main.loadNibNamed(K.NibName.loader, owner: self)
-        addSubview(parentView)
-        parentView.frame = self.bounds
-        parentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
-    
-    func setupLayout() {
+    private func setupLayout() {
         setupBackground()
+        setupHierarchy()
+        setupConstraints()
     }
     
-    func setupBackground() {
+    private func setupBackground() {
         self.backgroundColor = .clear
+    }
+    
+    private func setupHierarchy() {
+        addSubview(loader)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            loader.topAnchor.constraint(equalTo: self.topAnchor),
+            loader.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            loader.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            loader.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
     }
     
     func showLoader() {
         DispatchQueue.main.async {
             self.isHidden = false
-            self.activityIndicator.startAnimating()
+            self.loader.startAnimating()
         }
     }
     
     func hideLoader() {
         DispatchQueue.main.async {
             self.isHidden = true
-            self.activityIndicator.stopAnimating()
+            self.loader.stopAnimating()
         }
     }
 }

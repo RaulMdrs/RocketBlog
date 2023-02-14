@@ -21,9 +21,9 @@
 		3088FAB129785E86006AAD9D /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3088FAB029785E86006AAD9D /* ForYouViewController.swift */; };
 		3088FAB9297869D4006AAD9D /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3088FAB7297869D4006AAD9D /* PostCollectionViewCell.swift */; };
 		30894363295B7D720006004D /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30894362295B7D720006004D /* RegisterResponse.swift */; };
+		308AD517299583DA00266FC2 /* SignUpViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308AD516299583DA00266FC2 /* SignUpViewControllerExtension.swift */; };
 		30923B3629918287007CA54C /* PeopleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30923B3529918287007CA54C /* PeopleResponse.swift */; };
 		309350882981B2E4004C6219 /* VerifyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309350872981B2E4004C6219 /* VerifyLoader.swift */; };
-		30D0767629688728000B2E38 /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30D0767529688728000B2E38 /* Loader.xib */; };
 		30D0767829688748000B2E38 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D0767729688748000B2E38 /* LoaderView.swift */; };
 		30D34C4929521E3000AB48BA /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D34C3729521E3000AB48BA /* Montserrat-MediumItalic.ttf */; };
 		30D34C4A29521E3000AB48BA /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D34C3829521E3000AB48BA /* Montserrat-BlackItalic.ttf */; };
@@ -68,19 +68,15 @@
 		FA16AFC6294B8CB000C87C9B /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16AFC5294B8CB000C87C9B /* LandingPageViewController.swift */; };
 		FA16AFCB294B8CB200C87C9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA16AFCA294B8CB200C87C9B /* Assets.xcassets */; };
 		FA16AFCE294B8CB200C87C9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA16AFCC294B8CB200C87C9B /* LaunchScreen.storyboard */; };
-		FA1F5FC72950E31F004C0D2E /* SignInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F5FC62950E31F004C0D2E /* SignInView.storyboard */; };
-		FA1F5FC92950E32C004C0D2E /* SignUpView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1F5FC82950E32C004C0D2E /* SignUpView.storyboard */; };
 		FA277BB929649F00007F61FF /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA277BB829649F00007F61FF /* HomeView.storyboard */; };
 		FA43F2AD295B511700FF69E9 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43F2AC295B511700FF69E9 /* ApiManager.swift */; };
 		FA43F2AF295B68B600FF69E9 /* ReadyToRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43F2AE295B68B600FF69E9 /* ReadyToRegister.swift */; };
 		FA43F2B4295CA69D00FF69E9 /* RocketWarningModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43F2B3295CA69D00FF69E9 /* RocketWarningModal.swift */; };
-		FA43F2B6295CA71A00FF69E9 /* RocketWarningModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA43F2B5295CA71A00FF69E9 /* RocketWarningModal.xib */; };
 		FA5C4206296C841D00AFB452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4205296C841D00AFB452 /* User.swift */; };
 		FA5C4208296C844D00AFB452 /* Base64Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4207296C844D00AFB452 /* Base64Converter.swift */; };
 		FA5C420A296C868E00AFB452 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C4209296C868E00AFB452 /* UserResponse.swift */; };
 		FA5C420C296C9DEA00AFB452 /* GetUserFirstName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5C420B296C9DEA00AFB452 /* GetUserFirstName.swift */; };
 		FABF429429536A9C000428FA /* RocketTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF429229536A9C000428FA /* RocketTextField.swift */; };
-		FABF429529536A9C000428FA /* RocketTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABF429329536A9C000428FA /* RocketTextField.xib */; };
 		FABF429A295637FD000428FA /* ParametersVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF4299295637FD000428FA /* ParametersVerifier.swift */; };
 		FABF429C29563C35000428FA /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF429B29563C35000428FA /* UserRegister.swift */; };
 		FAE267E0296736E7002D1795 /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE267DF296736E7002D1795 /* ApiPath.swift */; };
@@ -105,9 +101,9 @@
 		3088FAB029785E86006AAD9D /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		3088FAB7297869D4006AAD9D /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		30894362295B7D720006004D /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		308AD516299583DA00266FC2 /* SignUpViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerExtension.swift; sourceTree = "<group>"; };
 		30923B3529918287007CA54C /* PeopleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponse.swift; sourceTree = "<group>"; };
 		309350872981B2E4004C6219 /* VerifyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyLoader.swift; sourceTree = "<group>"; };
-		30D0767529688728000B2E38 /* Loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 		30D0767729688748000B2E38 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		30D34C3729521E3000AB48BA /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		30D34C3829521E3000AB48BA /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -154,19 +150,15 @@
 		FA16AFCA294B8CB200C87C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA16AFCD294B8CB200C87C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA16AFCF294B8CB200C87C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA1F5FC62950E31F004C0D2E /* SignInView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInView.storyboard; sourceTree = "<group>"; };
-		FA1F5FC82950E32C004C0D2E /* SignUpView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpView.storyboard; sourceTree = "<group>"; };
 		FA277BB829649F00007F61FF /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		FA43F2AC295B511700FF69E9 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FA43F2AE295B68B600FF69E9 /* ReadyToRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyToRegister.swift; sourceTree = "<group>"; };
 		FA43F2B3295CA69D00FF69E9 /* RocketWarningModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketWarningModal.swift; sourceTree = "<group>"; };
-		FA43F2B5295CA71A00FF69E9 /* RocketWarningModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketWarningModal.xib; sourceTree = "<group>"; };
 		FA5C4205296C841D00AFB452 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA5C4207296C844D00AFB452 /* Base64Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64Converter.swift; sourceTree = "<group>"; };
 		FA5C4209296C868E00AFB452 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		FA5C420B296C9DEA00AFB452 /* GetUserFirstName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserFirstName.swift; sourceTree = "<group>"; };
 		FABF429229536A9C000428FA /* RocketTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketTextField.swift; sourceTree = "<group>"; };
-		FABF429329536A9C000428FA /* RocketTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketTextField.xib; sourceTree = "<group>"; };
 		FABF4299295637FD000428FA /* ParametersVerifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersVerifier.swift; sourceTree = "<group>"; };
 		FABF429B29563C35000428FA /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		FAE267DF296736E7002D1795 /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
@@ -199,7 +191,6 @@
 		306543EB2968857200831E47 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				30D0767529688728000B2E38 /* Loader.xib */,
 				30D0767729688748000B2E38 /* LoaderView.swift */,
 			);
 			path = Loader;
@@ -211,6 +202,7 @@
 				3088FAAE297855A5006AAD9D /* HomeViewControllerExtension.swift */,
 				303F847C297873D90081A46C /* ForYouViewControllerExtension.swift */,
 				FA0A086A2979B3F000164366 /* PeopleViewControllerExtension.swift */,
+				308AD516299583DA00266FC2 /* SignUpViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,8 +362,6 @@
 		FA16AFD6294BA18E00C87C9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA1F5FC62950E31F004C0D2E /* SignInView.storyboard */,
-				FA1F5FC82950E32C004C0D2E /* SignUpView.storyboard */,
 				FA277BB829649F00007F61FF /* HomeView.storyboard */,
 				FA0A08552978800F00164366 /* PostView.storyboard */,
 				FA0A08702979B5D600164366 /* ProfileView.storyboard */,
@@ -399,7 +389,6 @@
 			isa = PBXGroup;
 			children = (
 				FA43F2B3295CA69D00FF69E9 /* RocketWarningModal.swift */,
-				FA43F2B5295CA71A00FF69E9 /* RocketWarningModal.xib */,
 			);
 			path = RocketWarning;
 			sourceTree = "<group>";
@@ -408,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				FABF429229536A9C000428FA /* RocketTextField.swift */,
-				FABF429329536A9C000428FA /* RocketTextField.xib */,
 			);
 			path = RocketTextField;
 			sourceTree = "<group>";
@@ -498,8 +486,6 @@
 				FA0A08632979AF1C00164366 /* Quicksand-Regular.ttf in Resources */,
 				FA16AFCB294B8CB200C87C9B /* Assets.xcassets in Resources */,
 				30D34C5729521E3000AB48BA /* Montserrat-Regular.ttf in Resources */,
-				30D0767629688728000B2E38 /* Loader.xib in Resources */,
-				FA43F2B6295CA71A00FF69E9 /* RocketWarningModal.xib in Resources */,
 				30D34C4E29521E3000AB48BA /* Montserrat-ThinItalic.ttf in Resources */,
 				30D34C5229521E3000AB48BA /* Montserrat-LightItalic.ttf in Resources */,
 				FA0A08712979B5D600164366 /* ProfileView.storyboard in Resources */,
@@ -508,15 +494,12 @@
 				FA0A08622979AF1C00164366 /* Quicksand-SemiBold.ttf in Resources */,
 				FA0A08562978800F00164366 /* PostView.storyboard in Resources */,
 				FA277BB929649F00007F61FF /* HomeView.storyboard in Resources */,
-				FABF429529536A9C000428FA /* RocketTextField.xib in Resources */,
-				FA1F5FC92950E32C004C0D2E /* SignUpView.storyboard in Resources */,
 				FA0A08642979AF1C00164366 /* Quicksand-Light.ttf in Resources */,
 				30D34C5A29521E3000AB48BA /* Montserrat-ExtraLight.ttf in Resources */,
 				30D34C4929521E3000AB48BA /* Montserrat-MediumItalic.ttf in Resources */,
 				30D34C5129521E3000AB48BA /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				30D34C4C29521E3000AB48BA /* Montserrat-ExtraBold.ttf in Resources */,
 				30D34C5329521E3000AB48BA /* Montserrat-Medium.ttf in Resources */,
-				FA1F5FC72950E31F004C0D2E /* SignInView.storyboard in Resources */,
 				30D34C5529521E3000AB48BA /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				304B6BBE297724A8008838AD /* SliderTabView.xib in Resources */,
 				FA0A08612979AF1C00164366 /* Quicksand-Bold.ttf in Resources */,
@@ -562,6 +545,7 @@
 				3027F6392981BE7400DBC6C2 /* ShowErrorModal.swift in Sources */,
 				30E1DEE32965F86B000B8D0C /* Authentication.swift in Sources */,
 				FA0A08682979B1BE00164366 /* PersonCardCollectionViewCell.swift in Sources */,
+				308AD517299583DA00266FC2 /* SignUpViewControllerExtension.swift in Sources */,
 				FA5C420A296C868E00AFB452 /* UserResponse.swift in Sources */,
 				30894363295B7D720006004D /* RegisterResponse.swift in Sources */,
 				FAFF289829648F4E00C4EAC7 /* HomeViewController.swift in Sources */,

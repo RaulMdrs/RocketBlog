@@ -13,6 +13,8 @@ final class RocketButton: UIButton {
         case secondary
         case disabled
         case danger
+        case tertiary
+        case quaternary
     }
     
     var type: ButtonType = .primary {
@@ -21,12 +23,12 @@ final class RocketButton: UIButton {
         }
     }
     
-    init() { // init from code
+    init() {
         super.init(frame: .zero)
         setupTheButton()
     }
     
-    required init?(coder: NSCoder) { // init from storyboard/xib
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupTheButton()
     }
@@ -42,6 +44,12 @@ final class RocketButton: UIButton {
             backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.primary)
         case .secondary:
             backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.secondary)
+        case .tertiary:
+            backgroundColor = .clear
+            setTitleColor(UIColor(named: K.DefaultButton.ButtonColors.primary), for: .normal)
+        case .quaternary:
+            backgroundColor = .clear
+            setTitleColor(UIColor(named: K.DefaultButton.ButtonColors.secondary), for: .normal)
         case .disabled:
             backgroundColor = UIColor(named: K.DefaultButton.ButtonColors.disabledButton)
             tintColor = .white

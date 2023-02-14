@@ -86,7 +86,6 @@ class PersonCardCollectionViewCell: UICollectionViewCell {
     }()
     
     private func goToProfileButtonPressed() {
-        print("deu certo?")
         if let user = user{
             delegate?.gotToUser(user: user)
         }

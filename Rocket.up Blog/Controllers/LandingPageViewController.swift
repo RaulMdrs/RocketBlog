@@ -8,14 +8,11 @@
 import UIKit
 
 class LandingPageViewController: UIViewController {
-    
-    let signIn = SignInViewController()
-    
     private let background: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "backgroundLandingPage")
+        image.image = UIImage(named: K.Images.backgroundLandingPage)
         return image
     }()
     
@@ -103,15 +100,12 @@ class LandingPageViewController: UIViewController {
     }
     
     private func signInButtonPressed() {
-        //let storyboard = UIStoryboard(name: K.StoryboardNames.signIn, bundle: nil)
-        //let controller = storyboard.instantiateViewController(withIdentifier: signIn.identifier) as! SignInViewController
-        
-        navigationController?.pushViewController(signIn, animated: true)
+        let controller = SignInViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     private func signUpButtonPressed() {
-        let storyboard = UIStoryboard(name: K.StoryboardNames.signUp, bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: K.StoryboardNames.signUp) as! SignUpViewController
+        let controller = SignUpViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
 }

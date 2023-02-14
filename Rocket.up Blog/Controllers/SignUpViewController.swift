@@ -9,52 +9,74 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    let parentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    let signUpLabel: UILabel = {
+    let loader = LoaderView()
+    var newUser = UserRegister(name: "", email: "", password: "", confirmPassword: "")
+    var postRequest = ApiManager()
+    var readyToRegister = ReadyToRegister()
+    
+    private let signUpLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-      //  label.text = K.Intl.signUpLabelText
-        label.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.h3Headline)
+        label.text = K.Intl.signUpLabelText
+        label.font = UIFont(name: K.Fonts.montserratSemiBold, size: K.Fonts.Size.h4Headline)
+        label.textAlignment = .center
         label.numberOfLines = 1
         return label
     }()
-    let signUpButton: RocketButton! = {
+    
+    lazy var signUpButton: RocketButton = {
        let rocketButton = RocketButton()
         rocketButton.translatesAutoresizingMaskIntoConstraints = false
         rocketButton.type = .secondary
         rocketButton.setTitle(K.Intl.signUpButtonTitle, for: .normal)
         rocketButton.buttonEnable()
+        rocketButton.addAction(UIAction(handler: { UIAction in
+            self.submitSignUpPressed()
+        }), for: .touchUpInside)
         return rocketButton
     }()
-    let nameTextField: RocketTextField = {
+    
+    lazy var signInButton: RocketButton = {
+       let rocketButton = RocketButton()
+        rocketButton.translatesAutoresizingMaskIntoConstraints = false
+        rocketButton.type = .tertiary
+        rocketButton.setTitle(K.Intl.signInButtonTitle, for: .normal)
+        rocketButton.buttonEnable()
+        rocketButton.addAction(UIAction(handler: { UIAction in
+            self.redirectToSignIn()
+        }), for: .touchUpInside)
+        return rocketButton
+    }()
+    
+    private let nameTextField: RocketTextField = {
         let rocketTextField = RocketTextField()
         rocketTextField.translatesAutoresizingMaskIntoConstraints = false
         rocketTextField.customTextField(type: .name)
         return rocketTextField
     }()
-    let emailTextField: RocketTextField = {
+    
+    private let emailTextField: RocketTextField = {
         let rocketTextField = RocketTextField()
         rocketTextField.translatesAutoresizingMaskIntoConstraints = false
         rocketTextField.customTextField(type: .email)
         return rocketTextField
     }()
-    let passwordTextField: RocketTextField = {
+    
+    private let passwordTextField: RocketTextField = {
         let rocketTextField = RocketTextField()
         rocketTextField.translatesAutoresizingMaskIntoConstraints = false
         rocketTextField.customTextField(type: .password)
         return rocketTextField
     }()
-    let confirmPasswordTextField: RocketTextField = {
+    
+    private let confirmPasswordTextField: RocketTextField = {
         let rocketTextField = RocketTextField()
         rocketTextField.translatesAutoresizingMaskIntoConstraints = false
         rocketTextField.customTextField(type: .confirmPassword)
         return rocketTextField
     }()
-    let textFieldsStackView : UIStackView = {
+    
+    private let textFieldsStackView : UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = .fill
@@ -63,7 +85,8 @@ class SignUpViewController: UIViewController {
         stack.spacing = 11
         return stack
     }()
-    let headerStackView: UIStackView = {
+    
+    private let headerStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = .center
@@ -72,37 +95,57 @@ class SignUpViewController: UIViewController {
         stack.spacing = 40
         return stack
     }()
-    let scrollView : UIScrollView = {
+    
+    private let scrollView : UIScrollView = {
         let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.alwaysBounceVertical = false
+        scroll.alwaysBounceHorizontal = false
+        scroll.isDirectionalLockEnabled = true
+        scroll.bounces = false
         return scroll
     }()
-    let contentView : UIView = {
-        let view = UIView()
+    
+    private let contentView : UIView = {
+       let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    let logo : UIImageView = {
+    
+    private let logo : UIImageView = {
         let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: K.Images.rocketUpLogoAndTitle)
+        image.contentMode = .scaleAspectFit
         return image
     }()
-    let bottomStackView : UIStackView = {
+    
+    private let bottomStackView : UIStackView = {
         let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.spacing = 3
+        stack.alignment = .fill
+        stack.distribution = .fill
         return stack
     }()
-    let areYouSubscribed : UILabel = {
+    
+    private let areYouSubscribed : UILabel = {
         let label = UILabel()
+        label.text = K.Intl.areYouSubscribed
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor(named: K.Colors.mediumGray)
+        label.numberOfLines = 1
+        label.font = UIFont(name: K.Fonts.montserratSemiBold, size: 13)
         return label
     }()
-    var loader = LoaderView()
-    
-    var newUser = UserRegister(name: "", email: "", password: "", confirmPassword: "")
-    var postRequest = ApiManager()
-    var readyToRegister = ReadyToRegister()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         postRequest.requestDelegate = self
         setupLayout()
         setupGesture()
+        setupNavigationItem()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,8 +157,12 @@ class SignUpViewController: UIViewController {
         refreshNavigation()
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    private func setupNavigationItem() {
+        navigationItem.backButtonTitle = " "
     }
     
     private func setupGesture() {
@@ -123,21 +170,66 @@ class SignUpViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func setupLayout() {
+    private func setupLayout() {
+        self.view.backgroundColor = .white
+        setupHierarchy()
+        setupConstraints()
         setTextFieldDelegate()
-        setupLabel()
-        setupButton()
-        setupTextField()
         loaderSetup()
     }
     
-    func setupButton() {
-        signUpButton.type = .secondary
-        signUpButton.setTitle(K.Intl.signUpButtonTitle, for: .normal)
-        signUpButton.buttonEnable()
+    private func setupHierarchy() {
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(headerStackView)
+        scrollView.addSubview(textFieldsStackView)
+        scrollView.addSubview(bottomStackView)
+        
+        headerStackView.addArrangedSubview(logo)
+        headerStackView.addArrangedSubview(signUpLabel)
+        
+        textFieldsStackView.addArrangedSubview(nameTextField)
+        textFieldsStackView.addArrangedSubview(emailTextField)
+        textFieldsStackView.addArrangedSubview(passwordTextField)
+        textFieldsStackView.addArrangedSubview(confirmPasswordTextField)
+        
+        scrollView.addSubview(signUpButton)
+        
+        bottomStackView.addArrangedSubview(areYouSubscribed)
+        bottomStackView.addArrangedSubview(signInButton)
     }
-    func setupLabel() {
-        signUpLabel.font = UIFont(name: K.Fonts.montserratBold, size: K.Fonts.Size.h3Headline)
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            headerStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            headerStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            logo.heightAnchor.constraint(equalToConstant: 144),
+            logo.widthAnchor.constraint(equalToConstant: 144),
+            
+            signUpLabel.heightAnchor.constraint(equalToConstant: 40),
+            signUpLabel.widthAnchor.constraint(equalToConstant: 180),
+            
+            textFieldsStackView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 40),
+            textFieldsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 55),
+            textFieldsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -55),
+            textFieldsStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 0),
+            
+            signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signUpButton.topAnchor.constraint(equalTo: textFieldsStackView.bottomAnchor, constant: 20),
+            signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 55),
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -55),
+            signUpButton.heightAnchor.constraint(equalToConstant: 52),
+            
+            bottomStackView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 50),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 52),
+            bottomStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            bottomStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -10)
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,12 +238,12 @@ class SignUpViewController: UIViewController {
     }
     
     private func loaderSetup() {
-        loader = LoaderView(frame: self.parentView.frame)
+        loader.frame = self.view.frame
         loader.hideLoader()
-        self.parentView.addSubview(loader)
+        self.view.addSubview(loader)
     }
     
-    @IBAction private func submitSignUpPressed(_ sender: Any) {
+    private func submitSignUpPressed() {
         checkNameParameter()
         checkEmailParameter()
         checkPasswordParameter()
@@ -159,26 +251,23 @@ class SignUpViewController: UIViewController {
         finalVerificationBeforeSendingToAPI()
     }
     
-    @IBAction private func redirectToLoginScreen(_ sender: Any) {
-        let storyboard = UIStoryboard(name: K.StoryboardNames.signIn, bundle: nil)
-        
-        let controller = storyboard.instantiateViewController(withIdentifier: K.StoryboardNames.signIn) as! SignInViewController
-        
+    private func redirectToSignIn() {
+        let controller = SignInViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    private func checkTextFieldsValue() {
+    func checkTextFieldsValue() {
         guard let emailLength = emailTextField.textField.text?.count,
-              let nameLenght = nameTextField.textField.text?.count,
-              let passwordLenght = passwordTextField.textField.text?.count,
-              let confirmPasswordLenght = confirmPasswordTextField.textField.text?.count else {
+              let nameLength = nameTextField.textField.text?.count,
+              let passwordLength = passwordTextField.textField.text?.count,
+              let confirmPasswordLength = confirmPasswordTextField.textField.text?.count else {
             signUpButton.buttonDisable()
             return }
         if ParametersVerifier.verifyLetterCount(texts: [
-            nameLenght,
+            nameLength,
             emailLength,
-            passwordLenght,
-            confirmPasswordLenght
+            passwordLength,
+            confirmPasswordLength
         ]) {
             signUpButton.buttonEnable()
             signUpButton.type = .secondary
@@ -220,7 +309,7 @@ class SignUpViewController: UIViewController {
     
     private func checkPasswordParameter() {
         guard let passwordText = passwordTextField.textField.text else {return}
-        if ParametersVerifier.verifyPasswordTextField(passwordText){
+        if ParametersVerifier.verifyPasswordTextField(passwordText) {
             newUser.password = passwordText
             readyToRegister.passwordIsSet = true
             passwordTextField.resetError()
@@ -265,33 +354,6 @@ class SignUpViewController: UIViewController {
         navigationItem.hidesBackButton = true
         self.dismiss(animated: false)
         self.removeFromParent()
-    }
-}
-
-extension SignUpViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
-        return false
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        checkTextFieldsValue()
-    }
-    
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        checkTextFieldsValue()
-    }
-}
-extension SignUpViewController: RequestDelegate {
-    func success<T>(_ response: T) {
-        guard response is RegisterResponse else {return}
-        loader.hideLoader()
-        self.navigationController?.popToRootViewController(animated: false)
-    }
-    
-    func errorMessage(_ message: String) {
-        loader.hideLoader()
-        ShowError.ShowErrorModal(targetView: self.view, message: message, animationDuration: 0.5)
     }
 }
 
