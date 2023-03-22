@@ -9,3 +9,11 @@ Projeto realizado em conjunto com @alinedoamaral05 onde consumimos uma API inter
 
 https://user-images.githubusercontent.com/40407770/226980242-8c0587df-de93-4ddf-8776-77742f9e8e39.mov
 
+
+
+https://user-images.githubusercontent.com/40407770/226981224-0d0a1cb3-9588-4c81-881e-46f2debb35d0.mov
+
+
+
+https://user-images.githubusercontent.com/40407770/226981236-a481f2a6-7733-45a6-91df-c4fdc5e0dcc6.mov
+
